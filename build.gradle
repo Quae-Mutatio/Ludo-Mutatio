@@ -16,7 +16,7 @@ apply plugin: 'idea'
 
 version = property('version')
 group = property('group')
-archivesBaseName = property('modid')
+archivesBaseName = property('id')
 
 dependencies {
     minecraft "net.minecraftforge:forge:${property('mc.version')}-${property('forge.version')}"
@@ -70,12 +70,12 @@ minecraft {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : property('modid'),
-                "Specification-Vendor"    : property('authors'),
+                "Specification-Title"     : project.property('id'),
+                "Specification-Vendor"    : project.property('authors'),
                 "Specification-Version"   : "1",
                 "Implementation-Title"    : project.name,
                 "Implementation-Version"  : "${version}",
-                "Implementation-Vendor"   : property('group'),
+                "Implementation-Vendor"   : project.property('group'),
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
         ])
     }
