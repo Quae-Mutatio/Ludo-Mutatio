@@ -247,3 +247,4 @@ gradle/wrapper/gradle-wrapper.properties
 # End of https://www.toptal.com/developers/gitignore/api/java,gradle,forgegradle,maven,intellij,eclipse,visualstudiocode
 /.idea/misc.xml
 /.idea/vcs.xml
+/.idea/runConfigurations/

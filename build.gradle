@@ -18,6 +18,10 @@ version = property('version')
 group = property('group')
 archivesBaseName = property('id')
 
+sourceSets{
+    main.resources.srcDirs += 'src/main/generated/resources'
+}
+
 dependencies {
     minecraft "net.minecraftforge:forge:${property('mc.version')}-${property('forge.version')}"
 }
@@ -56,8 +60,9 @@ minecraft {
             ideaModule "${project.name}.main"
             args '--mod', 'ludomutatio',
                     '--all',
-                    '--output', file('src/generated/resources/'),
-                    '--existing', file('src/main/resources')
+                    '--output', file('src/main/generated/resources/'),
+                    '--existing', file('src/main/resources'),
+                    '--existing', file('src/main/generated/resources/')
             mods {
                 Ludo {
                     source sourceSets.main
