@@ -1,0 +1,95 @@
+buildscript {
+    repositories {
+        maven { url = 'https://files.minecraftforge.net/maven' }
+        jcenter()
+        mavenCentral()
+    }
+    dependencies {
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+    }
+}
+apply plugin: 'net.minecraftforge.gradle'
+apply plugin: 'maven-publish'
+
+apply plugin: 'java'
+apply plugin: 'idea'
+
+version = property('version')
+group = property('group')
+archivesBaseName = property('modid')
+
+dependencies {
+    minecraft "net.minecraftforge:forge:${property('mc.version')}-${property('forge.version')}"
+}
+
+minecraft {
+    mappings channel: 'snapshot', version: property('mcp.version')
+
+    // accessTransformer = file('src/main/resources/META-INF/accesstransformer.cfg')
+    runs {
+        client {
+            property 'forge.logging.console.level', 'debug'
+            workingDirectory project.file('run')
+            ideaModule "${project.name}.main"
+            args '--username', property('mc.username'), '--password', property('mc.password')
+            mods {
+                Ludo {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        server {
+            property 'forge.logging.console.level', 'debug'
+            workingDirectory project.file('run')
+            ideaModule "${project.name}.main"
+            mods {
+                Ludo {
+                    source sourceSets.main
+                }
+            }
+        }
+
+        data {
+            property 'forge.logging.console.level', 'debug'
+            workingDirectory project.file('run')
+            ideaModule "${project.name}.main"
+            args '--mod', 'ludomutatio',
+                    '--all',
+                    '--output', file('src/generated/resources/'),
+                    '--existing', file('src/main/resources')
+            mods {
+                Ludo {
+                    source sourceSets.main
+                }
+            }
+        }
+    }
+}
+
+jar {
+    manifest {
+        attributes([
+                "Specification-Title"     : "examplemod",
+                "Specification-Vendor"    : "examplemodsareus",
+                "Specification-Version"   : "1", // We are version 1 of ourselves
+                "Implementation-Title"    : project.name,
+                "Implementation-Version"  : "${version}",
+                "Implementation-Vendor"   : "examplemodsareus",
+                "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ")
+        ])
+    }
+}
+jar.finalizedBy('reobfJar')
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifact jar
+        }
+    }
+    repositories {
+        maven {
+            url "file:///${project.projectDir}/mcmodsrepo"
+        }
+    }
+}

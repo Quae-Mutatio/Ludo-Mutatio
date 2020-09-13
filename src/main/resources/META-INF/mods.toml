@@ -1,0 +1,31 @@
+modLoader="javafml"
+loaderVersion="[34,)"
+license="GNU LGPLv3"
+issueTrackerURL="https://github.com/Quae-Mutatio/Ludo-Mutatio/issues"
+
+[[mods]]
+    modId="ludomutatio" #mandatory
+    version="${file.jarVersion}" #mandatory
+    displayName="Ludo Mutatio" #mandatory
+    #updateJSONURL="?"
+    displayURL="https://ludo.mods.quae.dev/"
+    #logoFile="logo.png"
+    credits="?"
+    authors="vincentmet, LuHeGi"
+    description='''
+Game Overhaul Mod
+'''
+
+[[dependencies.ludomutatio]]
+    modId="forge"
+    mandatory=true
+    versionRange="[34,)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.ludomutatio]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.3]"
+    ordering="NONE"
+    side="BOTH"
