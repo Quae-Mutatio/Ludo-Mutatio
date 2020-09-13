@@ -14,5 +14,6 @@ public final class LudoLanguageProvider extends LanguageProvider {
     protected void addTranslations() {
         add(Items.SOFT_PEBBLE, "Soft Pebble");
         add(Items.HARD_PEBBLE, "Hard Pebble");
+        add(Items.STONE_BOWL, "Stone Bowl");
     }
 }

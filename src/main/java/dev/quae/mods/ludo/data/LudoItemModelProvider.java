@@ -32,5 +32,6 @@ public final class LudoItemModelProvider extends ItemModelProvider {
     protected void registerModels() {
         registerBasicItemModel(Items.SOFT_PEBBLE);
         registerBasicItemModel(Items.HARD_PEBBLE);
+        registerBasicItemModel(Items.STONE_BOWL);
     }
 }

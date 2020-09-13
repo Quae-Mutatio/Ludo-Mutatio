@@ -31,7 +31,8 @@ public final class Registry {
         LOGGER.debug("Registering items");
         event.getRegistry().registerAll(
                 new Item(new Properties()).setRegistryName("soft_pebble"),
-                new Item(new Properties()).setRegistryName("hard_pebble")
+                new Item(new Properties()).setRegistryName("hard_pebble"),
+                new Item(new Properties()).setRegistryName("stone_bowl")
         );
     }
 
@@ -60,6 +61,7 @@ public final class Registry {
     public static final class Items {
         public static final Item SOFT_PEBBLE = null;
         public static final Item HARD_PEBBLE = null;
+        public static final Item STONE_BOWL = null;
     }
 
     @ObjectHolder(Ludo.ID)
