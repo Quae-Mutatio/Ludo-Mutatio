@@ -30,7 +30,7 @@ public class TwoHandedRecipe implements IRecipe<PlayerInventory> {
 
     @Override
     public boolean matches(final PlayerInventory inv, final World worldIn) {
-        return RecipeMatcher.findMatches(ImmutableList.of(inv.mainInventory.get(0), inv.offHandInventory.get(0)), this.ingredients) != null;
+        return RecipeMatcher.findMatches(ImmutableList.of(inv.getCurrentItem(), inv.offHandInventory.get(0)), this.ingredients) != null;
     }
 
     @Override

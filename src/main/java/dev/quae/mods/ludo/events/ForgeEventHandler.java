@@ -6,15 +6,11 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
-import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.common.ForgeHooks;
-import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickBlock;
 import net.minecraftforge.eventbus.api.Event.Result;
@@ -59,8 +55,8 @@ public final class ForgeEventHandler {
                 .map(recipe -> recipe.getCraftingResult(playerInv))
                 .filter(it -> !it.isEmpty())
                 .map(result -> {
-                    player.getHeldItem(Hand.MAIN_HAND).split(1);
-                    player.getHeldItem(Hand.OFF_HAND).split(1);
+                    playerInv.getCurrentItem().split(1);
+                    playerInv.offHandInventory.get(0).split(1);
                     playerInv.addItemStackToInventory(result);
                     player.addStat(Stats.ITEM_CRAFTED.get(result.getItem()), result.getCount());
                     return ActionResultType.SUCCESS;
