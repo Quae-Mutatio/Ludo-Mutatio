@@ -2,6 +2,8 @@ package dev.quae.mods.ludo.setup;
 
 import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.block.CampfireSmelterBlock;
+import dev.quae.mods.ludo.item.PebbleItem;
+import dev.quae.mods.ludo.item.StoneBowlItem;
 import dev.quae.mods.ludo.tileentity.CampfireSmelterTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
@@ -38,9 +40,9 @@ public final class Registry {
     public static void onRegisterItems(final Register<Item> event) {
         LOGGER.debug("Registering items");
         event.getRegistry().registerAll(
-                prepare("soft_pebble", new Item(new Properties())),
-                prepare("hard_pebble", new Item(new Properties())),
-                prepare("stone_bowl", new Item(new Properties()))
+                prepare("soft_pebble", new PebbleItem(new Properties())),
+                prepare("hard_pebble", new PebbleItem(new Properties())),
+                prepare("stone_bowl", new StoneBowlItem(new Properties()))
         );
     }
 

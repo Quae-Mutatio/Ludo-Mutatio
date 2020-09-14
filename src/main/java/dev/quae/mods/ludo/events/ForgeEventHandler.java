@@ -41,22 +41,4 @@ public final class ForgeEventHandler {
             ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(Ludo.Items.SOFT_PEBBLE));
         }
     }
-
-    @SubscribeEvent
-    public static void onSmashPebbles(final RightClickItem event) {
-        final World world = event.getWorld();
-        if (world.isRemote()) {
-            return;
-        }
-        final PlayerEntity player = event.getPlayer();
-        final ItemStack mainHand = player.getHeldItem(Hand.MAIN_HAND);
-        final ItemStack offHand = player.getHeldItem(Hand.OFF_HAND);
-        if ((mainHand.getItem() == Ludo.Items.HARD_PEBBLE && offHand.getItem() == Ludo.Items.SOFT_PEBBLE) ||
-                (mainHand.getItem() == Ludo.Items.SOFT_PEBBLE && offHand.getItem() == Ludo.Items.HARD_PEBBLE)) {
-            mainHand.shrink(1);
-            offHand.shrink(1);
-            ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(Ludo.Items.STONE_BOWL));
-            // TODO: play a click sound for stones hitting each other.
-        }
-    }
 }
