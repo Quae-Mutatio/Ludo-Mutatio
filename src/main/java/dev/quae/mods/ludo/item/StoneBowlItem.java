@@ -22,6 +22,7 @@ public class StoneBowlItem extends Item {
         if (state.getBlock() != Blocks.CAMPFIRE) {
             return ActionResultType.PASS;
         }
+        context.getPlayer().getHeldItem(context.getHand()).shrink(1);
         world.setBlockState(pos, Ludo.Blocks.CAMPFIRE_SMELTER.getDefaultState());
         // TODO: maybe play a sound here
         // context.getPlayer().addStat(LudoStats.CRAFT_CAMPFIRE_SMELTER);
