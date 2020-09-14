@@ -2,4 +2,5 @@
 067ac8e14ceee8d4642b6009fb0bbc15faeddf4d assets/ludomutatio/models/item/hard_pebble.json
 322c5d11c5c098405687dab3cfc5381ff9881894 assets/ludomutatio/models/item/soft_pebble.json
 1e8269e8c823c9cba6fa5ef8b4ddc215da519dbf assets/ludomutatio/models/item/stone_bowl.json
+40bd357e003591d59bd0d5f0feda9ee8d36e6e93 data/ludomutatio/loot_tables/blocks/campfire_smelter.json
 e25f8ebdcb075dcbb12493211756c75d87b28f21 data/ludomutatio/recipes/stone_bowl.json
