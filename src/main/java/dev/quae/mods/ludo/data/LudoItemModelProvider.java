@@ -1,7 +1,6 @@
 package dev.quae.mods.ludo.data;
 
 import dev.quae.mods.ludo.Ludo;
-import dev.quae.mods.ludo.setup.Registry.Items;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -23,15 +22,15 @@ public final class LudoItemModelProvider extends ItemModelProvider {
     }
 
     private void registerBasicItemModel(@Nullable Item item) {
-        getBuilder(item.getRegistryName().getPath())
+        this.getBuilder(item.getRegistryName().getPath())
                 .parent(new UncheckedModelFile("item/generated"))
-                .texture("layer0", getModelLoc(item));
+                .texture("layer0", this.getModelLoc(item));
     }
 
     @Override
     protected void registerModels() {
-        registerBasicItemModel(Items.SOFT_PEBBLE);
-        registerBasicItemModel(Items.HARD_PEBBLE);
-        registerBasicItemModel(Items.STONE_BOWL);
+        this.registerBasicItemModel(Ludo.Items.SOFT_PEBBLE);
+        this.registerBasicItemModel(Ludo.Items.HARD_PEBBLE);
+        this.registerBasicItemModel(Ludo.Items.STONE_BOWL);
     }
 }

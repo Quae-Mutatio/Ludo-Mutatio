@@ -1,8 +1,46 @@
 package dev.quae.mods.ludo;
 
+import dev.quae.mods.ludo.tileentity.CampfireSmelterTileEntity;
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.SharedConstants;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.CapabilityInject;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.registries.ObjectHolder;
 
 @Mod(Ludo.ID)
 public class Ludo {
     public static final String ID = "ludomutatio";
+
+    public Ludo() {
+        SharedConstants.useDatafixers = false;
+    }
+
+    @CapabilityInject(IItemHandler.class)
+    public static final Capability<IItemHandler> INV_CAP = null;
+
+    @ObjectHolder(ID)
+    public static final class Blocks {
+        public static final Block CAMPFIRE_SMELTER = null;
+    }
+
+    @ObjectHolder(ID)
+    public static final class Items {
+        public static final Item SOFT_PEBBLE = null;
+        public static final Item HARD_PEBBLE = null;
+        public static final Item STONE_BOWL = null;
+    }
+
+    @ObjectHolder(ID)
+    public static final class TileEntityTypes {
+        public static final TileEntityType<CampfireSmelterTileEntity> CAMPFIRE_SMELTER = null;
+    }
+
+    @ObjectHolder(ID)
+    public static final class ContainerTypes {
+
+    }
 }

@@ -1,7 +1,6 @@
 package dev.quae.mods.ludo.data;
 
 import dev.quae.mods.ludo.Ludo;
-import dev.quae.mods.ludo.setup.Registry.Items;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -12,8 +11,8 @@ public final class LudoLanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
-        add(Items.SOFT_PEBBLE, "Soft Pebble");
-        add(Items.HARD_PEBBLE, "Hard Pebble");
-        add(Items.STONE_BOWL, "Stone Bowl");
+        this.add(Ludo.Items.SOFT_PEBBLE, "Soft Pebble");
+        this.add(Ludo.Items.HARD_PEBBLE, "Hard Pebble");
+        this.add(Ludo.Items.STONE_BOWL, "Stone Bowl");
     }
 }

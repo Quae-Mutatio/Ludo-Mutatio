@@ -1,7 +1,6 @@
 package dev.quae.mods.ludo.events;
 
 import dev.quae.mods.ludo.Ludo;
-import dev.quae.mods.ludo.setup.Registry.Items;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
@@ -37,9 +36,9 @@ public final class ForgeEventHandler {
         final PlayerEntity player = event.getPlayer();
         final int chance = world.rand.nextInt(100);
         if (chance < 5) {
-            ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(Items.HARD_PEBBLE));
+            ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(Ludo.Items.HARD_PEBBLE));
         } else if (chance < 25) {
-            ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(Items.SOFT_PEBBLE));
+            ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(Ludo.Items.SOFT_PEBBLE));
         }
     }
 
@@ -52,11 +51,11 @@ public final class ForgeEventHandler {
         final PlayerEntity player = event.getPlayer();
         final ItemStack mainHand = player.getHeldItem(Hand.MAIN_HAND);
         final ItemStack offHand = player.getHeldItem(Hand.OFF_HAND);
-        if ((mainHand.getItem() == Items.HARD_PEBBLE && offHand.getItem() == Items.SOFT_PEBBLE) ||
-                (mainHand.getItem() == Items.SOFT_PEBBLE && offHand.getItem() == Items.HARD_PEBBLE)) {
+        if ((mainHand.getItem() == Ludo.Items.HARD_PEBBLE && offHand.getItem() == Ludo.Items.SOFT_PEBBLE) ||
+                (mainHand.getItem() == Ludo.Items.SOFT_PEBBLE && offHand.getItem() == Ludo.Items.HARD_PEBBLE)) {
             mainHand.shrink(1);
             offHand.shrink(1);
-            ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(Items.STONE_BOWL));
+            ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(Ludo.Items.STONE_BOWL));
             // TODO: play a click sound for stones hitting each other.
         }
     }
