@@ -1,8 +1,11 @@
 package dev.quae.mods.ludo;
 
+import dev.quae.mods.ludo.recipe.TwoHandedRecipe;
 import dev.quae.mods.ludo.tileentity.CampfireSmelterTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedConstants;
@@ -43,6 +46,15 @@ public class Ludo {
     @ObjectHolder(ID)
     public static final class ContainerTypes {
 
+    }
+
+    @ObjectHolder(ID)
+    public static final class RecipeSerializers {
+        public static final IRecipeSerializer<TwoHandedRecipe> TWO_HANDED = null;
+    }
+
+    public static final class RecipeTypes {
+        public static final IRecipeType<TwoHandedRecipe> TWO_HANDED = IRecipeType.register(new ResourceLocation(ID, "two_handed").toString());
     }
 
     public static final class Stats {

@@ -2,14 +2,15 @@ package dev.quae.mods.ludo.setup;
 
 import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.block.CampfireSmelterBlock;
-import dev.quae.mods.ludo.item.PebbleItem;
 import dev.quae.mods.ludo.item.StoneBowlItem;
+import dev.quae.mods.ludo.recipe.TwoHandedRecipe;
 import dev.quae.mods.ludo.tileentity.CampfireSmelterTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.stats.IStatFormatter;
 import net.minecraft.stats.StatType;
 import net.minecraft.stats.Stats;
@@ -45,8 +46,8 @@ public final class Registry {
     public static void onRegisterItems(final Register<Item> event) {
         LOGGER.debug("Registering items");
         event.getRegistry().registerAll(
-                prepare("soft_pebble", new PebbleItem(new Properties())),
-                prepare("hard_pebble", new PebbleItem(new Properties())),
+                prepare("soft_pebble", new Item(new Properties())),
+                prepare("hard_pebble", new Item(new Properties())),
                 prepare("stone_bowl", new StoneBowlItem(new Properties()))
         );
     }
@@ -68,7 +69,16 @@ public final class Registry {
     }
 
     @SubscribeEvent
+    public static void onRegisterRecipeSerializers(final Register<IRecipeSerializer<?>> event) {
+        LOGGER.debug("Registering recipe serializers");
+        event.getRegistry().registerAll(
+            prepare("two_handed", new TwoHandedRecipe.Serializer())
+        );
+    }
+
+    @SubscribeEvent
     public static void onRegisterStatTypes(final Register<StatType<?>> event) {
+        LOGGER.debug("Registering stat types");
         addStat(Ludo.Stats.INTERACT_WITH_CAMPFIRE_SMELTER, IStatFormatter.DEFAULT);
         addStat(Ludo.Stats.CREATED_CAMPFIRE_SMELTER, IStatFormatter.DEFAULT);
     }

@@ -1,0 +1,15 @@
+{
+  "type": "ludomutatio:two_handed",
+  "ingredients": [
+    {
+      "item": "ludomutatio:hard_pebble"
+    },
+    {
+      "item": "ludomutatio:soft_pebble"
+    }
+  ],
+  "result": {
+    "item": "ludomutatio:stone_bowl",
+    "count": 1
+  }
+}

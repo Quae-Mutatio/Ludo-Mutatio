@@ -3,6 +3,7 @@ package dev.quae.mods.ludo.setup;
 import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.data.LudoItemModelProvider;
 import dev.quae.mods.ludo.data.LudoLanguageProvider;
+import dev.quae.mods.ludo.data.LudoRecipeProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -20,6 +21,10 @@ public final class DataGeneration {
         if (event.includeClient()) {
             gen.addProvider(new LudoLanguageProvider(gen, "en_us"));
             gen.addProvider(new LudoItemModelProvider(gen, efh));
+        }
+
+        if (event.includeServer()) {
+            gen.addProvider(new LudoRecipeProvider(gen));
         }
     }
 }
