@@ -1,5 +1,6 @@
 package dev.quae.mods.ludo.block;
 
+import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.tileentity.CampfireSmelterTileEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CampfireBlock;
@@ -30,7 +31,7 @@ public class CampfireSmelterBlock extends CampfireBlock {
                     return tile.getRecipe(heldItem)
                             .map(recipe -> {
                                 if (!world.isRemote() && tile.addItem(player.abilities.isCreativeMode ? heldItem.copy() : heldItem, recipe.getCookTime())) {
-                                    //player.addStat(LudoStats.INTERACT_WITH_CAMPFIRE_SMELTER);
+                                    player.addStat(Ludo.Stats.INTERACT_WITH_CAMPFIRE_SMELTER);
                                     return ActionResultType.SUCCESS;
                                 }
                                 return ActionResultType.CONSUME;

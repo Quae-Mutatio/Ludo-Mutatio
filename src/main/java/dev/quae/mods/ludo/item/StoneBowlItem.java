@@ -1,8 +1,10 @@
 package dev.quae.mods.ludo.item;
 
 import dev.quae.mods.ludo.Ludo;
+import dev.quae.mods.ludo.Ludo.Stats;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemUseContext;
 import net.minecraft.util.ActionResultType;
@@ -22,10 +24,11 @@ public class StoneBowlItem extends Item {
         if (state.getBlock() != Blocks.CAMPFIRE) {
             return ActionResultType.PASS;
         }
-        context.getPlayer().getHeldItem(context.getHand()).shrink(1);
+        final PlayerEntity player = context.getPlayer();
+        player.getHeldItem(context.getHand()).shrink(1);
         world.setBlockState(pos, Ludo.Blocks.CAMPFIRE_SMELTER.getDefaultState());
         // TODO: maybe play a sound here
-        // context.getPlayer().addStat(LudoStats.CRAFT_CAMPFIRE_SMELTER);
+        player.addStat(Stats.CREATED_CAMPFIRE_SMELTER, 1);
         return ActionResultType.SUCCESS;
     }
 }

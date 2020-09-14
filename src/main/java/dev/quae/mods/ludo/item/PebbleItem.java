@@ -1,13 +1,12 @@
 package dev.quae.mods.ludo.item;
 
 import dev.quae.mods.ludo.Ludo;
-import net.minecraft.entity.LivingEntity;
+import dev.quae.mods.ludo.Ludo.Items;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.ItemUseContext;
+import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResult;
-import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.world.World;
 import net.minecraftforge.items.ItemHandlerHelper;
@@ -27,7 +26,7 @@ public class PebbleItem extends Item {
             offHand.shrink(1);
             ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(Ludo.Items.STONE_BOWL));
             // TODO: play a click sound for stones hitting each other.
-            // player.addStat(LudoStats.CRAFT_STONE_BOWL);
+            player.addStat(Stats.ITEM_CRAFTED.get(Items.STONE_BOWL), 1);
             player.swingArm(Hand.OFF_HAND);
             player.swingArm(Hand.MAIN_HAND);
             return ActionResult.resultSuccess(hand == Hand.MAIN_HAND ? mainHand : offHand);

@@ -10,6 +10,9 @@ import net.minecraft.block.Blocks;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
+import net.minecraft.stats.IStatFormatter;
+import net.minecraft.stats.StatType;
+import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
@@ -23,6 +26,8 @@ import org.apache.logging.log4j.Logger;
 
 import static net.minecraft.block.AbstractBlock.Properties.from;
 import static net.minecraft.tileentity.TileEntityType.Builder.create;
+import static net.minecraft.util.registry.Registry.CUSTOM_STAT;
+import static net.minecraft.util.registry.Registry.register;
 
 @EventBusSubscriber(bus = Bus.MOD, modid = Ludo.ID)
 public final class Registry {
@@ -62,6 +67,12 @@ public final class Registry {
         );
     }
 
+    @SubscribeEvent
+    public static void onRegisterStatTypes(final Register<StatType<?>> event) {
+        addStat(Ludo.Stats.INTERACT_WITH_CAMPFIRE_SMELTER, IStatFormatter.DEFAULT);
+        addStat(Ludo.Stats.CREATED_CAMPFIRE_SMELTER, IStatFormatter.DEFAULT);
+    }
+
     private static <T extends IForgeRegistryEntry<T>> T prepare(String name, T t) {
         return t.setRegistryName(new ResourceLocation(Ludo.ID, name));
     }
@@ -69,5 +80,10 @@ public final class Registry {
     @SuppressWarnings("unchecked")
     private static <T extends TileEntity> TileEntityType<T> prepare(String name, TileEntityType.Builder<T> builder) {
         return (TileEntityType<T>) prepare(name, builder.build(null));
+    }
+
+    private static void addStat(ResourceLocation name, IStatFormatter formatter) {
+        register(CUSTOM_STAT, name, name);
+        Stats.CUSTOM.get(name, formatter);
     }
 }

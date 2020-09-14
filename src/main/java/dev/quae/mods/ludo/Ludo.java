@@ -4,6 +4,7 @@ import dev.quae.mods.ludo.tileentity.CampfireSmelterTileEntity;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.tileentity.TileEntityType;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedConstants;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
@@ -42,5 +43,10 @@ public class Ludo {
     @ObjectHolder(ID)
     public static final class ContainerTypes {
 
+    }
+
+    public static final class Stats {
+        public static final ResourceLocation INTERACT_WITH_CAMPFIRE_SMELTER = new ResourceLocation(ID, "interact_with_campfire_smelter");
+        public static final ResourceLocation CREATED_CAMPFIRE_SMELTER = new ResourceLocation(ID, "created_campfire_smelter");
     }
 }
