@@ -1,0 +1,15 @@
+{
+  "type": "ludomutatio:two_handed",
+  "ingredients": [
+    {
+      "tag": "ludomutatio:chisel"
+    },
+    {
+      "item": "minecraft:oak_planks"
+    }
+  ],
+  "result": {
+    "item": "ludomutatio:oak_wooden_plate",
+    "count": 8
+  }
+}

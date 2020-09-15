@@ -1,0 +1,15 @@
+{
+  "type": "ludomutatio:two_handed",
+  "ingredients": [
+    {
+      "tag": "ludomutatio:chisel"
+    },
+    {
+      "item": "minecraft:end_stone"
+    }
+  ],
+  "result": {
+    "item": "ludomutatio:endstone_plate",
+    "count": 8
+  }
+}

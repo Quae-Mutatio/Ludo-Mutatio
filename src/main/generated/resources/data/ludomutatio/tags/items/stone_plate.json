@@ -1,0 +1,12 @@
+{
+  "replace": false,
+  "values": [
+    "ludomutatio:stone_plate",
+    "ludomutatio:granite_stone_plate",
+    "ludomutatio:diorite_stone_plate",
+    "ludomutatio:andesite_stone_plate",
+    "ludomutatio:sandstone_plate",
+    "ludomutatio:red_sandstone_plate",
+    "ludomutatio:endstone_plate"
+  ]
+}

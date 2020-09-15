@@ -4,13 +4,21 @@ import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.Ludo.RecipeTypes;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.I18n;
+import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.stats.Stats;
 import net.minecraft.util.ActionResultType;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
+import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickBlock;
 import net.minecraftforge.eventbus.api.Event.Result;
@@ -55,8 +63,18 @@ public final class ForgeEventHandler {
                 .map(recipe -> recipe.getCraftingResult(playerInv))
                 .filter(it -> !it.isEmpty())
                 .map(result -> {
-                    playerInv.getCurrentItem().split(1);
-                    playerInv.offHandInventory.get(0).split(1);
+                    final ItemStack mainHand = playerInv.getCurrentItem();
+                    final ItemStack offHand = playerInv.offHandInventory.get(0);
+                    if (!mainHand.getToolTypes().isEmpty()) {
+                        mainHand.damageItem(1, player, it -> it.sendBreakAnimation(Hand.MAIN_HAND));
+                    } else {
+                        mainHand.split(1);
+                    }
+                    if (!offHand.getToolTypes().isEmpty()) {
+                        offHand.damageItem(1, player, it -> it.sendBreakAnimation(Hand.OFF_HAND));
+                    } else {
+                        offHand.split(1);
+                    }
                     playerInv.addItemStackToInventory(result);
                     player.addStat(Stats.ITEM_CRAFTED.get(result.getItem()), result.getCount());
                     return ActionResultType.SUCCESS;
@@ -66,5 +84,13 @@ public final class ForgeEventHandler {
             event.setCanceled(true);
             event.setResult(Result.DENY);
         }
+    }
+
+    @SubscribeEvent
+    public static void onAddToTooltip(final ItemTooltipEvent event) {
+        final ClientWorld world = Minecraft.getInstance().world;
+        world.getRecipeManager().getRecipe(IRecipeType.BLASTING, new Inventory(event.getItemStack()), world).ifPresent(recipe -> {
+            event.getToolTip().add(new TranslationTextComponent("tooltip.campfire_smelter.recipe", I18n.format(recipe.getRecipeOutput().getTranslationKey())));
+        });
     }
 }

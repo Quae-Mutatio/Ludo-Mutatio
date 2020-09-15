@@ -2,7 +2,9 @@ package dev.quae.mods.ludo.setup;
 
 import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.block.CampfireSmelterBlock;
+import dev.quae.mods.ludo.item.ChiselItem;
 import dev.quae.mods.ludo.item.StoneBowlItem;
+import dev.quae.mods.ludo.itemgroup.LudoItemGroup;
 import dev.quae.mods.ludo.recipe.TwoHandedRecipe;
 import dev.quae.mods.ludo.tileentity.CampfireSmelterTileEntity;
 import net.minecraft.block.Block;
@@ -10,6 +12,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
+import net.minecraft.item.ItemTier;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.stats.IStatFormatter;
 import net.minecraft.stats.StatType;
@@ -17,6 +20,7 @@ import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -46,9 +50,34 @@ public final class Registry {
     public static void onRegisterItems(final Register<Item> event) {
         LOGGER.debug("Registering items");
         event.getRegistry().registerAll(
-                prepare("soft_pebble", new Item(new Properties())),
-                prepare("hard_pebble", new Item(new Properties())),
-                prepare("stone_bowl", new StoneBowlItem(new Properties()))
+                // BLOCKS
+
+                // MATERIALS
+                prepare("soft_pebble", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("hard_pebble", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("stone_bowl", new StoneBowlItem(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("oak_wooden_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("birch_wooden_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("spruce_wooden_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("jungle_wooden_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("dark_oak_wooden_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("acacia_wooden_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("crimson_wooden_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("warped_wooden_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("stone_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("granite_stone_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("diorite_stone_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("andesite_stone_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("sandstone_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("red_sandstone_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("endstone_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                // TOOLS
+                prepare("wooden_chisel", new ChiselItem(ItemTier.WOOD, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isBurnable())),
+                prepare("stone_chisel", new ChiselItem(ItemTier.STONE, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isBurnable())),
+                prepare("iron_chisel", new ChiselItem(ItemTier.IRON, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isBurnable())),
+                prepare("gold_chisel", new ChiselItem(ItemTier.GOLD, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isBurnable())),
+                prepare("diamond_chisel", new ChiselItem(ItemTier.DIAMOND, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isBurnable())),
+                prepare("netherite_chisel", new ChiselItem(ItemTier.NETHERITE, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isBurnable()))
         );
     }
 

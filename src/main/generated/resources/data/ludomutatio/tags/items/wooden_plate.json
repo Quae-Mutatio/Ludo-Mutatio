@@ -1,0 +1,13 @@
+{
+  "replace": false,
+  "values": [
+    "ludomutatio:oak_wooden_plate",
+    "ludomutatio:birch_wooden_plate",
+    "ludomutatio:spruce_wooden_plate",
+    "ludomutatio:jungle_wooden_plate",
+    "ludomutatio:dark_oak_wooden_plate",
+    "ludomutatio:acacia_wooden_plate",
+    "ludomutatio:crimson_wooden_plate",
+    "ludomutatio:warped_wooden_plate"
+  ]
+}

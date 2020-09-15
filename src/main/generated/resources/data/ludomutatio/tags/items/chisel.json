@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "ludomutatio:wooden_chisel",
+    "ludomutatio:stone_chisel",
+    "ludomutatio:iron_chisel",
+    "ludomutatio:gold_chisel",
+    "ludomutatio:diamond_chisel",
+    "ludomutatio:netherite_chisel"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "type": "ludomutatio:two_handed",
+  "ingredients": [
+    {
+      "tag": "ludomutatio:chisel"
+    },
+    {
+      "item": "minecraft:red_sandstone"
+    }
+  ],
+  "result": {
+    "item": "ludomutatio:red_sandstone_plate",
+    "count": 8
+  }
+}

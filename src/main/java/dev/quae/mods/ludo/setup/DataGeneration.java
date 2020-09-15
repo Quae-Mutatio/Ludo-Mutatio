@@ -1,10 +1,7 @@
 package dev.quae.mods.ludo.setup;
 
 import dev.quae.mods.ludo.Ludo;
-import dev.quae.mods.ludo.data.LudoItemModelProvider;
-import dev.quae.mods.ludo.data.LudoLanguageProvider;
-import dev.quae.mods.ludo.data.LudoLootTableProvider;
-import dev.quae.mods.ludo.data.LudoRecipeProvider;
+import dev.quae.mods.ludo.data.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -27,6 +24,9 @@ public final class DataGeneration {
         if (event.includeServer()) {
             gen.addProvider(new LudoRecipeProvider(gen));
             gen.addProvider(new LudoLootTableProvider(gen));
+            final LudoBlockTagsProvider blockTagsProvider = new LudoBlockTagsProvider(gen, efh);
+            gen.addProvider(blockTagsProvider);
+            gen.addProvider(new LudoItemTagsProvider(gen, blockTagsProvider, efh));
         }
     }
 }
