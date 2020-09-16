@@ -18,7 +18,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-public class LudoLootTableProvider extends LootTableProvider {
+public final class LudoLootTableProvider extends LootTableProvider {
     private static final List<Pair<Supplier<Consumer<BiConsumer<ResourceLocation, Builder>>>, LootParameterSet>> LOOT_TABLES = ImmutableList.of(
             Pair.of(LudoBlockLootTables::new, LootParameterSets.BLOCK)
     );

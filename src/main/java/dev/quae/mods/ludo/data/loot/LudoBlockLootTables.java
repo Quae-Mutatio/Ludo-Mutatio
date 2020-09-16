@@ -13,7 +13,7 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
-public class LudoBlockLootTables extends BlockLootTables {
+public final class LudoBlockLootTables extends BlockLootTables {
     @Override
     protected void addTables() {
         this.registerLootTable(Blocks.CAMPFIRE_SMELTER, (unlit) -> droppingWithSilkTouch(unlit, withSurvivesExplosion(unlit, ItemLootEntry.builder(Items.CHARCOAL).acceptFunction(SetCount.builder(ConstantRange.of(2))))));

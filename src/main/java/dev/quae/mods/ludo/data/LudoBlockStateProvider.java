@@ -6,7 +6,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public class LudoBlockStateProvider extends BlockStateProvider {
+public final class LudoBlockStateProvider extends BlockStateProvider {
     public LudoBlockStateProvider(final DataGenerator gen, final ExistingFileHelper exFileHelper) {
         super(gen, Ludo.ID, exFileHelper);
     }

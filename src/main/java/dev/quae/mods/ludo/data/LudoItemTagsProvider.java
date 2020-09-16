@@ -9,7 +9,7 @@ import net.minecraft.data.ItemTagsProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import org.jetbrains.annotations.Nullable;
 
-public class LudoItemTagsProvider extends ItemTagsProvider {
+public final class LudoItemTagsProvider extends ItemTagsProvider {
     public LudoItemTagsProvider(final DataGenerator dataGenerator, final BlockTagsProvider blockTagProvider, @Nullable final ExistingFileHelper existingFileHelper) {
         super(dataGenerator, blockTagProvider, Ludo.ID, existingFileHelper);
     }

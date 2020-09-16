@@ -10,7 +10,7 @@ import net.minecraft.item.Items;
 
 import java.util.function.Consumer;
 
-public class LudoRecipeProvider extends RecipeProvider {
+public final class LudoRecipeProvider extends RecipeProvider {
     public LudoRecipeProvider(final DataGenerator generatorIn) {
         super(generatorIn);
     }

@@ -17,7 +17,7 @@ import net.minecraftforge.common.util.RecipeMatcher;
 import net.minecraftforge.registries.ForgeRegistryEntry;
 import org.jetbrains.annotations.Nullable;
 
-public class TwoHandedRecipe implements IRecipe<PlayerInventory> {
+public final class TwoHandedRecipe implements IRecipe<PlayerInventory> {
     private final ResourceLocation id;
     private final ItemStack output;
     private final NonNullList<Ingredient> ingredients;
@@ -63,7 +63,7 @@ public class TwoHandedRecipe implements IRecipe<PlayerInventory> {
         return RecipeTypes.TWO_HANDED;
     }
 
-    public static class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<TwoHandedRecipe> {
+    public static final class Serializer extends ForgeRegistryEntry<IRecipeSerializer<?>> implements IRecipeSerializer<TwoHandedRecipe> {
         @Override
         public TwoHandedRecipe read(final ResourceLocation id, final JsonObject json) {
             // Read Ingredients
