@@ -1,4 +1,5 @@
 {
+  "error.leaf.not_enough": "You need 8 leaves to make a pile",
   "item.ludomutatio.acacia_wooden_plate": "Acacia Wooden Plate",
   "item.ludomutatio.andesite_stone_plate": "Andesite Stone Plate",
   "item.ludomutatio.birch_wooden_plate": "Birch Wooden Plate",
@@ -12,6 +13,7 @@
   "item.ludomutatio.hard_pebble": "Hard Pebble",
   "item.ludomutatio.iron_chisel": "Iron Chisel",
   "item.ludomutatio.jungle_wooden_plate": "Jungle Wooden Plate",
+  "item.ludomutatio.leaf": "Leaf",
   "item.ludomutatio.netherite_chisel": "Netherite Chisel",
   "item.ludomutatio.oak_wooden_plate": "Oak Wooden Plate",
   "item.ludomutatio.red_sandstone_plate": "Red Sandstone Plate",

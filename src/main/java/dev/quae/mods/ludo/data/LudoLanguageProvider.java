@@ -33,14 +33,15 @@ public final class LudoLanguageProvider extends LanguageProvider {
         this.add(Ludo.Items.SANDSTONE_PLATE, "Sandstone Plate");
         this.add(Ludo.Items.RED_SANDSTONE_PLATE, "Red Sandstone Plate");
         this.add(Ludo.Items.ENDSTONE_PLATE, "Endstone Plate");
+        this.add(Ludo.Items.LEAF, "Leaf");
 
         // TOOL ITEM NAMES
-        this.add(Items.WOODEN_CHISEL, "Wooden Chisel");
-        this.add(Items.STONE_CHISEL, "Stone Chisel");
-        this.add(Items.IRON_CHISEL, "Iron Chisel");
-        this.add(Items.GOLD_CHISEL, "Gold Chisel");
-        this.add(Items.DIAMOND_CHISEL, "Diamond Chisel");
-        this.add(Items.NETHERITE_CHISEL, "Netherite Chisel");
+        this.add(Ludo.Items.WOODEN_CHISEL, "Wooden Chisel");
+        this.add(Ludo.Items.STONE_CHISEL, "Stone Chisel");
+        this.add(Ludo.Items.IRON_CHISEL, "Iron Chisel");
+        this.add(Ludo.Items.GOLD_CHISEL, "Gold Chisel");
+        this.add(Ludo.Items.DIAMOND_CHISEL, "Diamond Chisel");
+        this.add(Ludo.Items.NETHERITE_CHISEL, "Netherite Chisel");
 
         // TOOLTIPS
         this.add("tooltip.campfire_smelter.recipe", "Creates {0} when cooked in a bowl on a campfire");
@@ -48,6 +49,9 @@ public final class LudoLanguageProvider extends LanguageProvider {
         // ITEM GROUPS
         this.addItemGroup(LudoItemGroup.MATERIALS, "Ludo Mutatio Materials");
         this.addItemGroup(LudoItemGroup.TOOLS, "Ludo Mutatio Tools");
+
+        // ERRORS
+        this.add("error.leaf.not_enough", "You need 8 leaves to make a pile");
     }
 
     private void addItemGroup(ItemGroup group, String translation) {

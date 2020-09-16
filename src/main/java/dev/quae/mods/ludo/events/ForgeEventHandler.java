@@ -13,6 +13,7 @@ import net.minecraft.inventory.Inventory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.stats.Stats;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
@@ -21,6 +22,8 @@ import net.minecraft.world.World;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent.LeftClickBlock;
+import net.minecraftforge.event.entity.player.PlayerInteractEvent.RightClickBlock;
+import net.minecraftforge.event.entity.player.PlayerWakeUpEvent;
 import net.minecraftforge.eventbus.api.Event.Result;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -91,6 +94,52 @@ public final class ForgeEventHandler {
         final ClientWorld world = Minecraft.getInstance().world;
         world.getRecipeManager().getRecipe(IRecipeType.BLASTING, new Inventory(event.getItemStack()), world).ifPresent(recipe -> {
             event.getToolTip().add(new TranslationTextComponent("tooltip.campfire_smelter.recipe", I18n.format(recipe.getRecipeOutput().getTranslationKey())));
+        });
+    }
+
+    @SubscribeEvent
+    public static void onRightClickLeaves(final RightClickBlock event) {
+        // Do nothing on the client
+        final World world = event.getWorld();
+        if (world.isRemote()) {
+            return;
+        }
+        // Do nothing on anything that isn't a leaves block.
+        final BlockPos pos = event.getPos();
+        final BlockState leaves = world.getBlockState(pos);
+        if (!leaves.isIn(BlockTags.LEAVES)) {
+            return;
+        }
+        // Only work if the player is holding a leaf or nothing.
+        final PlayerEntity player = event.getPlayer();
+        final ItemStack mainHandItem = player.getHeldItemMainhand();
+        if (!(mainHandItem.isEmpty() || Ludo.Tags.Items.LEAF.contains(mainHandItem.getItem()))) {
+            return;
+        }
+        // Give the player a leaf
+        ItemHandlerHelper.giveItemToPlayer(player, new ItemStack(Ludo.Items.LEAF));
+        // Have a chance to break the leaves block
+        if (world.getRandom().nextInt(100) < 40) {
+            world.destroyBlock(pos, true);
+        }
+        event.setCancellationResult(ActionResultType.SUCCESS);
+        event.setCanceled(true);
+        event.setUseItem(Result.DENY);
+        event.setUseBlock(Result.DENY);
+    }
+
+    @SubscribeEvent
+    public static void onPlayerWakeUp(final PlayerWakeUpEvent event) {
+        final PlayerEntity player = event.getPlayer();
+        final World world = player.getEntityWorld();
+        if (event.updateWorld() || world.isRemote()) {
+            return;
+        }
+        player.getBedPosition().ifPresent(bedPos -> {
+            final BlockState state = world.getBlockState(bedPos);
+            if (state.isIn(Ludo.Blocks.LEAVES_PILE)) {
+                world.destroyBlock(bedPos, false);
+            }
         });
     }
 }

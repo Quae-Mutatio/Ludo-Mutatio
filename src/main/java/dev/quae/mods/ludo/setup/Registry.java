@@ -2,13 +2,20 @@ package dev.quae.mods.ludo.setup;
 
 import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.block.CampfireSmelterBlock;
+import dev.quae.mods.ludo.block.LeavesPileBlock;
 import dev.quae.mods.ludo.item.ChiselItem;
+import dev.quae.mods.ludo.item.ItemLeaf;
 import dev.quae.mods.ludo.item.StoneBowlItem;
 import dev.quae.mods.ludo.itemgroup.LudoItemGroup;
 import dev.quae.mods.ludo.recipe.TwoHandedRecipe;
 import dev.quae.mods.ludo.tileentity.CampfireSmelterTileEntity;
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
+import net.minecraft.block.material.Material;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.RenderType;
+import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.inventory.container.ContainerType;
 import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
@@ -20,7 +27,8 @@ import net.minecraft.stats.Stats;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.common.ToolType;
+import net.minecraft.world.FoliageColors;
+import net.minecraft.world.biome.BiomeColors;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
@@ -42,7 +50,8 @@ public final class Registry {
     public static void onRegisterBlocks(final Register<Block> event) {
         LOGGER.debug("Registering blocks");
         event.getRegistry().registerAll(
-                prepare("campfire_smelter", new CampfireSmelterBlock(true, 1, from(Blocks.CAMPFIRE)))
+                prepare("campfire_smelter", new CampfireSmelterBlock(true, 1, from(Blocks.CAMPFIRE))),
+                prepare("leaves_pile", new LeavesPileBlock(AbstractBlock.Properties.create(Material.LEAVES).hardnessAndResistance(2.0f).notSolid().setOpaque((p_test_1_, p_test_2_, p_test_3_) -> false).setAllowsSpawn((p_test_1_, p_test_2_, p_test_3_, p_test_4_) -> false).setSuffocates((p_test_1_, p_test_2_, p_test_3_) -> false).noDrops()))
         );
     }
 
@@ -71,13 +80,14 @@ public final class Registry {
                 prepare("sandstone_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
                 prepare("red_sandstone_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
                 prepare("endstone_plate", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
+                prepare("leaf", new ItemLeaf(new Properties().group(LudoItemGroup.MATERIALS))),
                 // TOOLS
-                prepare("wooden_chisel", new ChiselItem(ItemTier.WOOD, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isBurnable())),
-                prepare("stone_chisel", new ChiselItem(ItemTier.STONE, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isBurnable())),
-                prepare("iron_chisel", new ChiselItem(ItemTier.IRON, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isBurnable())),
-                prepare("gold_chisel", new ChiselItem(ItemTier.GOLD, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isBurnable())),
-                prepare("diamond_chisel", new ChiselItem(ItemTier.DIAMOND, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isBurnable())),
-                prepare("netherite_chisel", new ChiselItem(ItemTier.NETHERITE, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isBurnable()))
+                prepare("wooden_chisel", new ChiselItem(ItemTier.WOOD, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS))),
+                prepare("stone_chisel", new ChiselItem(ItemTier.STONE, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS))),
+                prepare("iron_chisel", new ChiselItem(ItemTier.IRON, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS))),
+                prepare("gold_chisel", new ChiselItem(ItemTier.GOLD, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS))),
+                prepare("diamond_chisel", new ChiselItem(ItemTier.DIAMOND, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS))),
+                prepare("netherite_chisel", new ChiselItem(ItemTier.NETHERITE, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isImmuneToFire()))
         );
     }
 
@@ -101,7 +111,7 @@ public final class Registry {
     public static void onRegisterRecipeSerializers(final Register<IRecipeSerializer<?>> event) {
         LOGGER.debug("Registering recipe serializers");
         event.getRegistry().registerAll(
-            prepare("two_handed", new TwoHandedRecipe.Serializer())
+                prepare("two_handed", new TwoHandedRecipe.Serializer())
         );
     }
 
@@ -124,5 +134,18 @@ public final class Registry {
     private static void addStat(ResourceLocation name, IStatFormatter formatter) {
         register(CUSTOM_STAT, name, name);
         Stats.CUSTOM.get(name, formatter);
+    }
+
+    public static void onRegisterBlockColors() {
+        Minecraft.getInstance().getBlockColors().register((state, world, pos, tintIndex) -> {
+            if (world != null && pos != null) {
+                return BiomeColors.getFoliageColor(world, pos);
+            }
+            return FoliageColors.getDefault();
+        }, Ludo.Blocks.LEAVES_PILE);
+    }
+
+    public static void onRegisterBlockRenderLayers() {
+        RenderTypeLookup.setRenderLayer(Ludo.Blocks.LEAVES_PILE, RenderType.getCutoutMipped());
     }
 }

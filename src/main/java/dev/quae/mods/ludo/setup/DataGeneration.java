@@ -19,6 +19,7 @@ public final class DataGeneration {
         if (event.includeClient()) {
             gen.addProvider(new LudoLanguageProvider(gen, "en_us"));
             gen.addProvider(new LudoItemModelProvider(gen, efh));
+            gen.addProvider(new LudoBlockStateProvider(gen, efh));
         }
 
         if (event.includeServer()) {
