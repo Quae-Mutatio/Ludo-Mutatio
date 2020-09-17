@@ -42,6 +42,32 @@ public class Ludo {
     public static final class Blocks {
         public static final Block CAMPFIRE_SMELTER = null;
         public static final Block LEAVES_PILE = null;
+        
+        public static final Block ACANTHITE_ORE = null; //Silver
+        public static final Block BARYTE_ORE = null; //Barium
+        public static final Block BAUXITE_ORE = null; //Aluminium
+        public static final Block BERYL_ORE = null; //Beryllium/Aluminium
+        public static final Block BORNITE_ORE = null; //Copper/Iron
+        public static final Block CASSITERITE_ORE = null; //Tin
+        public static final Block CHALCOCITE_ORE = null; //Copper
+        public static final Block CHALCOPYRITE_ORE = null; //Copper/Iron
+        public static final Block CHROMITE_ORE = null; //Chrome/Iron/Magnesium
+        public static final Block CINNABAR_ORE = null; //Mercury
+        public static final Block COBALTITE_ORE = null; //Cobalt/Iron/Arsenic
+        public static final Block COLTAN_ORE = null; //Iron/Manganese/Niobium/Tantalum
+        public static final Block GALENA_ORE = null; //Lead
+        public static final Block HEMATITE_ORE = null; //Iron
+        public static final Block ILMENITE_ORE = null; //Iron/Titanium
+        public static final Block MAGNETITE_ORE = null; //Iron
+        public static final Block MALACHITE_ORE = null; //Copper
+        public static final Block MOLYBDENITE_ORE = null; //Molybdenum
+        public static final Block PENTALANDITE_ORE = null; //Iron/Nickel
+        public static final Block PYROLUSITE_ORE = null; //Manganese
+        public static final Block SCHEELITE_ORE = null; //Calcium/Tungsten
+        public static final Block SPERRYLITE_ORE = null; //Platinum/Arsenic
+        public static final Block SPHALERITE_ORE = null; //Zinc
+        public static final Block URANITITE_ORE = null; //Uranium
+        public static final Block WOLFRAMITE_ORE = null; //Tungsten/Iron/Manganese
     }
 
     @ObjectHolder(ID)
@@ -100,10 +126,10 @@ public class Ludo {
 
     public static final class Tags {
         public static final class Items {
-            public static final IOptionalNamedTag<Item> WOODEN_PLATE = tag("wooden_plate");
-            public static final IOptionalNamedTag<Item> STONE_PLATE = tag("stone_plate");
-            public static final IOptionalNamedTag<Item> CHISEL = tag("chisel");
-            public static final IOptionalNamedTag<Item> LEAF = tag("leaf");
+            public static final IOptionalNamedTag<Item> WOODEN_PLATES = tag("wooden_plates");
+            public static final IOptionalNamedTag<Item> STONE_PLATES = tag("stone_plates");
+            public static final IOptionalNamedTag<Item> CHISELS = tag("chisels");
+            public static final IOptionalNamedTag<Item> LEAVES = tag("leaves");
 
 
             private static IOptionalNamedTag<Item> tag(String name) {

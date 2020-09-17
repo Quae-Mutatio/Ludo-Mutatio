@@ -16,7 +16,7 @@ public final class LudoItemTagsProvider extends ItemTagsProvider {
 
     @Override
     protected void registerTags() {
-        this.getOrCreateBuilder(Tags.Items.WOODEN_PLATE)
+        this.getOrCreateBuilder(Tags.Items.WOODEN_PLATES)
                 .add(Items.OAK_WOODEN_PLATE)
                 .add(Items.BIRCH_WOODEN_PLATE)
                 .add(Items.SPRUCE_WOODEN_PLATE)
@@ -26,7 +26,7 @@ public final class LudoItemTagsProvider extends ItemTagsProvider {
                 .add(Items.CRIMSON_WOODEN_PLATE)
                 .add(Items.WARPED_WOODEN_PLATE);
 
-        this.getOrCreateBuilder(Tags.Items.STONE_PLATE)
+        this.getOrCreateBuilder(Tags.Items.STONE_PLATES)
                 .add(Items.STONE_PLATE)
                 .add(Items.GRANITE_STONE_PLATE)
                 .add(Items.DIORITE_STONE_PLATE)
@@ -35,7 +35,7 @@ public final class LudoItemTagsProvider extends ItemTagsProvider {
                 .add(Items.RED_SANDSTONE_PLATE)
                 .add(Items.ENDSTONE_PLATE);
 
-        this.getOrCreateBuilder(Tags.Items.CHISEL)
+        this.getOrCreateBuilder(Tags.Items.CHISELS)
                 .add(Items.WOODEN_CHISEL)
                 .add(Items.STONE_CHISEL)
                 .add(Items.IRON_CHISEL)

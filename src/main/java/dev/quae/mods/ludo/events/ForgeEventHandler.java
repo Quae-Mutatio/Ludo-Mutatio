@@ -113,7 +113,7 @@ public final class ForgeEventHandler {
         // Only work if the player is holding a leaf or nothing.
         final PlayerEntity player = event.getPlayer();
         final ItemStack mainHandItem = player.getHeldItemMainhand();
-        if (!(mainHandItem.isEmpty() || Ludo.Tags.Items.LEAF.contains(mainHandItem.getItem()))) {
+        if (!(mainHandItem.isEmpty() || Ludo.Tags.Items.LEAVES.contains(mainHandItem.getItem()))) {
             return;
         }
         // Give the player a leaf

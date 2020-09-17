@@ -2,7 +2,7 @@
   "type": "ludomutatio:two_handed",
   "ingredients": [
     {
-      "tag": "ludomutatio:chisel"
+      "tag": "ludomutatio:chisels"
     },
     {
       "item": "minecraft:spruce_planks"

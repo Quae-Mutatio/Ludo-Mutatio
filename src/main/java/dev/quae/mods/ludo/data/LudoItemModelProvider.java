@@ -65,7 +65,7 @@ public final class LudoItemModelProvider extends ItemModelProvider {
         this.registerBasicItemModelWithBlockTexture(Ludo.Items.SANDSTONE_PLATE, Blocks.SANDSTONE);
         this.registerBasicItemModelWithBlockTexture(Ludo.Items.RED_SANDSTONE_PLATE, Blocks.RED_SANDSTONE);
         this.registerBasicItemModelWithBlockTexture(Ludo.Items.ENDSTONE_PLATE, Blocks.END_STONE);
-//        this.registerBasicItemModel(Items.LEAF);  // TODO: create texture
+        this.registerBasicItemModel(Items.LEAF);
 
         // TOOLS
 //        this.registerBasicItemModel(Items.WOODEN_CHISEL);  // TODO: create texture
