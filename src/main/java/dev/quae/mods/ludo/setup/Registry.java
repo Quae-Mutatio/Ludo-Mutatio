@@ -1,6 +1,7 @@
 package dev.quae.mods.ludo.setup;
 
 import dev.quae.mods.ludo.Ludo;
+import dev.quae.mods.ludo.Ludo.Blocks;
 import dev.quae.mods.ludo.block.CampfireSmelterBlock;
 import dev.quae.mods.ludo.block.LeavesPileBlock;
 import dev.quae.mods.ludo.item.ChiselItem;
@@ -15,9 +16,8 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.item.Item;
+import net.minecraft.item.*;
 import net.minecraft.item.Item.Properties;
-import net.minecraft.item.ItemTier;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.stats.IStatFormatter;
 import net.minecraft.stats.StatType;
@@ -53,31 +53,31 @@ public final class Registry {
                 prepare("leaves_pile", new LeavesPileBlock(AbstractBlock.Properties.create(Material.LEAVES).sound(SoundType.WET_GRASS).hardnessAndResistance(2.0f).notSolid().setOpaque((p_test_1_, p_test_2_, p_test_3_) -> false).setAllowsSpawn((p_test_1_, p_test_2_, p_test_3_, p_test_4_) -> false).setSuffocates((p_test_1_, p_test_2_, p_test_3_) -> false).noDrops()))
                 
                 //Ores
-                //prepare("acanthite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("baryte_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("bauxite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("beryl_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("bornite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("cassiterite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("chalcocite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("chalcopyrite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("chromite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("cinnabar_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("cobaltite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("coltan_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("galena_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("hematite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("ilmenite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("magnetite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("malachite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("molybdenite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("pentalandite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("pyrolusite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("scheelite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("sperrylite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("sphalerite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("uranitite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
-                //prepare("wolframite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5)))
+                prepare("acanthite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("baryte_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("bauxite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("beryl_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("bornite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("cassiterite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("chalcocite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("chalcopyrite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("chromite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("cinnabar_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("cobaltite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("coltan_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("galena_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("hematite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("ilmenite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("magnetite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("malachite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("molybdenite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("pentalandite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("pyrolusite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("scheelite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("sperrylite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("sphalerite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("uranitite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
+                prepare("wolframite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5)))
         );
     }
 
@@ -85,8 +85,32 @@ public final class Registry {
     public static void onRegisterItems(final Register<Item> event) {
         LOGGER.debug("Registering items");
         event.getRegistry().registerAll(
-                // BLOCKS
-                
+                //ORE BLOCKS
+                prepare("acanthite_ore", new BlockItem(Blocks.ACANTHITE_ORE, new Item.Properties())),
+                prepare("baryte_ore", new BlockItem(Blocks.BARYTE_ORE, new Item.Properties())),
+                prepare("bauxite_ore", new BlockItem(Blocks.BAUXITE_ORE, new Item.Properties())),
+                prepare("beryl_ore", new BlockItem(Blocks.BERYL_ORE, new Item.Properties())),
+                prepare("bornite_ore", new BlockItem(Blocks.BORNITE_ORE, new Item.Properties())),
+                prepare("cassiterite_ore", new BlockItem(Blocks.CASSITERITE_ORE, new Item.Properties())),
+                prepare("chalcocite_ore", new BlockItem(Blocks.CHALCOCITE_ORE, new Item.Properties())),
+                prepare("chalcopyrite_ore", new BlockItem(Blocks.CHALCOPYRITE_ORE, new Item.Properties())),
+                prepare("chromite_ore", new BlockItem(Blocks.CHROMITE_ORE, new Item.Properties())),
+                prepare("cinnabar_ore", new BlockItem(Blocks.CINNABAR_ORE, new Item.Properties())),
+                prepare("cobaltite_ore", new BlockItem(Blocks.COBALTITE_ORE, new Item.Properties())),
+                prepare("coltan_ore", new BlockItem(Blocks.COLTAN_ORE, new Item.Properties())),
+                prepare("galena_ore", new BlockItem(Blocks.GALENA_ORE, new Item.Properties())),
+                prepare("hematite_ore", new BlockItem(Blocks.HEMATITE_ORE, new Item.Properties())),
+                prepare("ilmenite_ore", new BlockItem(Blocks.ILMENITE_ORE, new Item.Properties())),
+                prepare("magnetite_ore", new BlockItem(Blocks.MAGNETITE_ORE, new Item.Properties())),
+                prepare("malachite_ore", new BlockItem(Blocks.MALACHITE_ORE, new Item.Properties())),
+                prepare("molybdenite_ore", new BlockItem(Blocks.MOLYBDENITE_ORE, new Item.Properties())),
+                prepare("pentalandite_ore", new BlockItem(Blocks.PENTALANDITE_ORE, new Item.Properties())),
+                prepare("pyrolusite_ore", new BlockItem(Blocks.PYROLUSITE_ORE, new Item.Properties())),
+                prepare("scheelite_ore", new BlockItem(Blocks.SCHEELITE_ORE, new Item.Properties())),
+                prepare("sperrylite_ore", new BlockItem(Blocks.SPERRYLITE_ORE, new Item.Properties())),
+                prepare("sphalerite_ore", new BlockItem(Blocks.SPHALERITE_ORE, new Item.Properties())),
+                prepare("uranitite_ore", new BlockItem(Blocks.URANITITE_ORE, new Item.Properties())),
+                prepare("wolframite_ore", new BlockItem(Blocks.WOLFRAMITE_ORE, new Item.Properties())),
                 // MATERIALS
                 prepare("soft_pebble", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
                 prepare("hard_pebble", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
