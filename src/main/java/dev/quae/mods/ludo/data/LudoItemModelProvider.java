@@ -68,7 +68,7 @@ public final class LudoItemModelProvider extends ItemModelProvider {
         this.registerBasicItemModel(Items.LEAF);
 
         // TOOLS
-//        this.registerBasicItemModel(Items.WOODEN_CHISEL);  // TODO: create texture
+        this.registerBasicItemModel(Items.WOODEN_CHISEL);
 //        this.registerBasicItemModel(Items.STONE_CHISEL);  // TODO: create texture
 //        this.registerBasicItemModel(Items.IRON_CHISEL);  // TODO: create texture
 //        this.registerBasicItemModel(Items.GOLD_CHISEL);  // TODO: create texture

@@ -42,5 +42,8 @@ public final class LudoItemTagsProvider extends ItemTagsProvider {
                 .add(Items.GOLD_CHISEL)
                 .add(Items.DIAMOND_CHISEL)
                 .add(Items.NETHERITE_CHISEL);
+
+        this.getOrCreateBuilder(Tags.Items.LEAVES)
+                .add(Items.LEAF);
     }
 }
