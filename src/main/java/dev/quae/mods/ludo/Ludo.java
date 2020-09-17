@@ -72,6 +72,34 @@ public class Ludo {
 
     @ObjectHolder(ID)
     public static final class Items {
+        //Ores
+        public static final Item ACANTHITE_ORE = null; //Silver
+        public static final Item BARYTE_ORE = null; //Barium
+        public static final Item BAUXITE_ORE = null; //Aluminium
+        public static final Item BERYL_ORE = null; //Beryllium/Aluminium
+        public static final Item BORNITE_ORE = null; //Copper/Iron
+        public static final Item CASSITERITE_ORE = null; //Tin
+        public static final Item CHALCOCITE_ORE = null; //Copper
+        public static final Item CHALCOPYRITE_ORE = null; //Copper/Iron
+        public static final Item CHROMITE_ORE = null; //Chrome/Iron/Magnesium
+        public static final Item CINNABAR_ORE = null; //Mercury
+        public static final Item COBALTITE_ORE = null; //Cobalt/Iron/Arsenic
+        public static final Item COLTAN_ORE = null; //Iron/Manganese/Niobium/Tantalum
+        public static final Item GALENA_ORE = null; //Lead
+        public static final Item HEMATITE_ORE = null; //Iron
+        public static final Item ILMENITE_ORE = null; //Iron/Titanium
+        public static final Item MAGNETITE_ORE = null; //Iron
+        public static final Item MALACHITE_ORE = null; //Copper
+        public static final Item MOLYBDENITE_ORE = null; //Molybdenum
+        public static final Item PENTALANDITE_ORE = null; //Iron/Nickel
+        public static final Item PYROLUSITE_ORE = null; //Manganese
+        public static final Item SCHEELITE_ORE = null; //Calcium/Tungsten
+        public static final Item SPERRYLITE_ORE = null; //Platinum/Arsenic
+        public static final Item SPHALERITE_ORE = null; //Zinc
+        public static final Item URANITITE_ORE = null; //Uranium
+        public static final Item WOLFRAMITE_ORE = null; //Tungsten/Iron/Manganese
+        
+        //Materials
         public static final Item SOFT_PEBBLE = null;
         public static final Item HARD_PEBBLE = null;
         public static final Item STONE_BOWL = null;
@@ -92,6 +120,7 @@ public class Ludo {
         public static final Item ENDSTONE_PLATE = null;
         public static final Item LEAF = null;
 
+        //Tools
         public static final Item WOODEN_CHISEL = null;
         public static final Item STONE_CHISEL = null;
         public static final Item IRON_CHISEL = null;

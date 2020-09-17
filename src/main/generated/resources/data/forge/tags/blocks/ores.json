@@ -1,0 +1,30 @@
+{
+  "replace": false,
+  "values": [
+    "ludomutatio:acanthite_ore",
+    "ludomutatio:baryte_ore",
+    "ludomutatio:bauxite_ore",
+    "ludomutatio:beryl_ore",
+    "ludomutatio:bornite_ore",
+    "ludomutatio:cassiterite_ore",
+    "ludomutatio:chalcocite_ore",
+    "ludomutatio:chalcopyrite_ore",
+    "ludomutatio:chromite_ore",
+    "ludomutatio:cinnabar_ore",
+    "ludomutatio:cobaltite_ore",
+    "ludomutatio:coltan_ore",
+    "ludomutatio:galena_ore",
+    "ludomutatio:hematite_ore",
+    "ludomutatio:ilmenite_ore",
+    "ludomutatio:magnetite_ore",
+    "ludomutatio:malachite_ore",
+    "ludomutatio:molybdenite_ore",
+    "ludomutatio:pentalandite_ore",
+    "ludomutatio:pyrolusite_ore",
+    "ludomutatio:scheelite_ore",
+    "ludomutatio:sperrylite_ore",
+    "ludomutatio:sphalerite_ore",
+    "ludomutatio:uranitite_ore",
+    "ludomutatio:wolframite_ore"
+  ]
+}
