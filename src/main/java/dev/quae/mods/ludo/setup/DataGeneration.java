@@ -17,7 +17,8 @@ public final class DataGeneration {
         final DataGenerator gen = event.getGenerator();
         final ExistingFileHelper efh = event.getExistingFileHelper();
         if (event.includeClient()) {
-            gen.addProvider(new LudoLanguageProvider(gen, "en_us"));
+            gen.addProvider(new LudoLanguageProvider_EN_US(gen, "en_us"));
+            gen.addProvider(new LudoLanguageProvider_NL_NL(gen, "nl_nl"));
             gen.addProvider(new LudoItemModelProvider(gen, efh));
             gen.addProvider(new LudoBlockStateProvider(gen, efh));
         }

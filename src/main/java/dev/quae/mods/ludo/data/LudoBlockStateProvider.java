@@ -14,31 +14,31 @@ public final class LudoBlockStateProvider extends BlockStateProvider {
     @Override
     protected void registerStatesAndModels() {
         // ORES
-        this.simpleBlock(Ludo.Blocks.ACANTHITE_ORE);
-        this.simpleBlock(Ludo.Blocks.BARYTE_ORE);
-        this.simpleBlock(Ludo.Blocks.BAUXITE_ORE);
-        this.simpleBlock(Ludo.Blocks.BERYL_ORE);
-        this.simpleBlock(Ludo.Blocks.BORNITE_ORE);
-        this.simpleBlock(Ludo.Blocks.CASSITERITE_ORE);
-        this.simpleBlock(Ludo.Blocks.CHALCOCITE_ORE);
-        this.simpleBlock(Ludo.Blocks.CHALCOPYRITE_ORE);
-        this.simpleBlock(Ludo.Blocks.CHROMITE_ORE);
-        this.simpleBlock(Ludo.Blocks.CINNABAR_ORE);
-        this.simpleBlock(Ludo.Blocks.COBALTITE_ORE);
-        this.simpleBlock(Ludo.Blocks.COLTAN_ORE);
-        this.simpleBlock(Ludo.Blocks.GALENA_ORE);
-        this.simpleBlock(Ludo.Blocks.HEMATITE_ORE);
-        this.simpleBlock(Ludo.Blocks.ILMENITE_ORE);
-        this.simpleBlock(Ludo.Blocks.MAGNETITE_ORE);
-        this.simpleBlock(Ludo.Blocks.MALACHITE_ORE);
-        this.simpleBlock(Ludo.Blocks.MOLYBDENITE_ORE);
-        this.simpleBlock(Ludo.Blocks.PENTALANDITE_ORE);
-        this.simpleBlock(Ludo.Blocks.PYROLUSITE_ORE);
-        this.simpleBlock(Ludo.Blocks.SCHEELITE_ORE);
-        this.simpleBlock(Ludo.Blocks.SPERRYLITE_ORE);
-        this.simpleBlock(Ludo.Blocks.SPHALERITE_ORE);
-        this.simpleBlock(Ludo.Blocks.URANITITE_ORE);
-        this.simpleBlock(Ludo.Blocks.WOLFRAMITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.ACANTHITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.BARYTE_ORE);
+        //this.simpleBlock(Ludo.Blocks.BAUXITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.BERYL_ORE);
+        //this.simpleBlock(Ludo.Blocks.BORNITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.CASSITERITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.CHALCOCITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.CHALCOPYRITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.CHROMITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.CINNABAR_ORE);
+        //this.simpleBlock(Ludo.Blocks.COBALTITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.COLTAN_ORE);
+        //this.simpleBlock(Ludo.Blocks.GALENA_ORE);
+        //this.simpleBlock(Ludo.Blocks.HEMATITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.ILMENITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.MAGNETITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.MALACHITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.MOLYBDENITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.PENTALANDITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.PYROLUSITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.SCHEELITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.SPERRYLITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.SPHALERITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.URANITITE_ORE);
+        //this.simpleBlock(Ludo.Blocks.WOLFRAMITE_ORE);
         
         this.simpleBlock(Ludo.Blocks.LEAVES_PILE, this.models().getBuilder("leaves_pile")
                 .parent(this.models().getExistingFile(this.mcLoc("block/thin_block")))

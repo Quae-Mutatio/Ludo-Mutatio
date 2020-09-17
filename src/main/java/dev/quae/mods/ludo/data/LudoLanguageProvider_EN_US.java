@@ -1,14 +1,16 @@
 package dev.quae.mods.ludo.data;
 
 import dev.quae.mods.ludo.Ludo;
-import dev.quae.mods.ludo.Ludo.Items;
 import dev.quae.mods.ludo.itemgroup.LudoItemGroup;
+import dev.quae.mods.ludo.materials.elements.Element;
+import dev.quae.mods.ludo.materials.isotopes.*;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraftforge.common.data.LanguageProvider;
 
-public final class LudoLanguageProvider extends LanguageProvider {
-    public LudoLanguageProvider(DataGenerator gen, String locale) {
+public final class LudoLanguageProvider_EN_US extends LanguageProvider {
+    public LudoLanguageProvider_EN_US(DataGenerator gen, String locale) {
         super(gen, Ludo.ID, locale);
     }
 
@@ -49,12 +51,56 @@ public final class LudoLanguageProvider extends LanguageProvider {
         // ITEM GROUPS
         this.addItemGroup(LudoItemGroup.MATERIALS, "Ludo Mutatio Materials");
         this.addItemGroup(LudoItemGroup.TOOLS, "Ludo Mutatio Tools");
+        this.addItemGroup(LudoItemGroup.RESOURCES, "Ludo Mutatio Resources");
 
         // ERRORS
         this.add("error.leaf.not_enough", "You need 8 leaves to make a pile");
+        
+        //Element
+        this.add(Element.HYDROGEN, "Hydrogen");
+        this.add(Element.HELIUM, "Helium");
+        
+        //ISOTOPES
+        this.add(Hydrogen.ISO1.getIso(), "Protium");
+        this.add(Hydrogen.ISO2.getIso(), "Deuterium");
+        this.add(Hydrogen.ISO3.getIso(), "Tritium");
+        this.add(Hydrogen.ISO4.getIso(), "Hydrogen-4");
+        this.add(Hydrogen.ISO5.getIso(), "Hydrogen-5");
+        this.add(Hydrogen.ISO6.getIso(), "Hydrogen-6");
+        this.add(Hydrogen.ISO7.getIso(), "Hydrogen-7");
+        
+        this.add(Helium.ISO2.getIso(), "Diproton");
+        this.add(Helium.ISO3.getIso(), "Helium-3");
+        this.add(Helium.ISO4.getIso(), "Helium-4");
+        this.add(Helium.ISO5.getIso(), "Helium-5");
+        this.add(Helium.ISO6.getIso(), "Helium-6");
+        this.add(Helium.ISO7.getIso(), "Helium-7");
+        this.add(Helium.ISO8.getIso(), "Helium-8");
+        this.add(Helium.ISO9.getIso(), "Helium-9");
+        this.add(Helium.ISO10.getIso(), "Helium-10");
+        
+        this.add(Lithium.ISO3.getIso(), "Triproton");
+        this.add(Lithium.ISO4.getIso(), "Lithium-4");
+        this.add(Lithium.ISO5.getIso(), "Lithium-5");
+        this.add(Lithium.ISO6.getIso(), "Lithium-6");
+        this.add(Lithium.ISO7.getIso(), "Lithium-7");
+        this.add(Lithium.ISO8.getIso(), "Lithium-8");
+        this.add(Lithium.ISO9.getIso(), "Lithium-9");
+        this.add(Lithium.ISO10.getIso(), "Lithium-10");
+        this.add(Lithium.ISO11.getIso(), "Lithium-11");
+        this.add(Lithium.ISO12.getIso(), "Lithium-12");
+        this.add(Lithium.ISO13.getIso(), "Lithium-13");
     }
 
     private void addItemGroup(ItemGroup group, String translation) {
         this.add("itemGroup." + group.getPath(), translation);
+    }
+    
+    private void add(Isotope isotope, String translation){
+        this.add(((TranslationTextComponent)isotope.getName()).getKey(), translation);
+    }
+    
+    private void add(Element element, String translation){
+        this.add(((TranslationTextComponent)element.getName()).getKey(), translation);
     }
 }

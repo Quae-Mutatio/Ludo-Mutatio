@@ -99,10 +99,10 @@ public final class LudoItemModelProvider extends ItemModelProvider{
 		
 		// TOOLS
 		this.registerBasicItemModel(Items.WOODEN_CHISEL);
-		this.registerBasicItemModel(Items.STONE_CHISEL);
-		this.registerBasicItemModel(Items.IRON_CHISEL);
-		this.registerBasicItemModel(Items.GOLD_CHISEL);
-		this.registerBasicItemModel(Items.DIAMOND_CHISEL);
-		this.registerBasicItemModel(Items.NETHERITE_CHISEL);
+		//this.registerBasicItemModel(Items.STONE_CHISEL);
+		//this.registerBasicItemModel(Items.IRON_CHISEL);
+		//this.registerBasicItemModel(Items.GOLD_CHISEL);
+		//this.registerBasicItemModel(Items.DIAMOND_CHISEL);
+		//this.registerBasicItemModel(Items.NETHERITE_CHISEL);
 	}
 }
