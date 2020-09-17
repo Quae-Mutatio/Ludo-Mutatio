@@ -1,7 +1,6 @@
 package dev.quae.mods.ludo.setup;
 
 import dev.quae.mods.ludo.Ludo;
-import dev.quae.mods.ludo.Ludo.Blocks;
 import dev.quae.mods.ludo.block.CampfireSmelterBlock;
 import dev.quae.mods.ludo.block.LeavesPileBlock;
 import dev.quae.mods.ludo.item.ChiselItem;
@@ -86,31 +85,31 @@ public final class Registry {
         LOGGER.debug("Registering items");
         event.getRegistry().registerAll(
                 //ORE BLOCKS
-                prepare("acanthite_ore", new BlockItem(Blocks.ACANTHITE_ORE, new Item.Properties())),
-                prepare("baryte_ore", new BlockItem(Blocks.BARYTE_ORE, new Item.Properties())),
-                prepare("bauxite_ore", new BlockItem(Blocks.BAUXITE_ORE, new Item.Properties())),
-                prepare("beryl_ore", new BlockItem(Blocks.BERYL_ORE, new Item.Properties())),
-                prepare("bornite_ore", new BlockItem(Blocks.BORNITE_ORE, new Item.Properties())),
-                prepare("cassiterite_ore", new BlockItem(Blocks.CASSITERITE_ORE, new Item.Properties())),
-                prepare("chalcocite_ore", new BlockItem(Blocks.CHALCOCITE_ORE, new Item.Properties())),
-                prepare("chalcopyrite_ore", new BlockItem(Blocks.CHALCOPYRITE_ORE, new Item.Properties())),
-                prepare("chromite_ore", new BlockItem(Blocks.CHROMITE_ORE, new Item.Properties())),
-                prepare("cinnabar_ore", new BlockItem(Blocks.CINNABAR_ORE, new Item.Properties())),
-                prepare("cobaltite_ore", new BlockItem(Blocks.COBALTITE_ORE, new Item.Properties())),
-                prepare("coltan_ore", new BlockItem(Blocks.COLTAN_ORE, new Item.Properties())),
-                prepare("galena_ore", new BlockItem(Blocks.GALENA_ORE, new Item.Properties())),
-                prepare("hematite_ore", new BlockItem(Blocks.HEMATITE_ORE, new Item.Properties())),
-                prepare("ilmenite_ore", new BlockItem(Blocks.ILMENITE_ORE, new Item.Properties())),
-                prepare("magnetite_ore", new BlockItem(Blocks.MAGNETITE_ORE, new Item.Properties())),
-                prepare("malachite_ore", new BlockItem(Blocks.MALACHITE_ORE, new Item.Properties())),
-                prepare("molybdenite_ore", new BlockItem(Blocks.MOLYBDENITE_ORE, new Item.Properties())),
-                prepare("pentalandite_ore", new BlockItem(Blocks.PENTALANDITE_ORE, new Item.Properties())),
-                prepare("pyrolusite_ore", new BlockItem(Blocks.PYROLUSITE_ORE, new Item.Properties())),
-                prepare("scheelite_ore", new BlockItem(Blocks.SCHEELITE_ORE, new Item.Properties())),
-                prepare("sperrylite_ore", new BlockItem(Blocks.SPERRYLITE_ORE, new Item.Properties())),
-                prepare("sphalerite_ore", new BlockItem(Blocks.SPHALERITE_ORE, new Item.Properties())),
-                prepare("uranitite_ore", new BlockItem(Blocks.URANITITE_ORE, new Item.Properties())),
-                prepare("wolframite_ore", new BlockItem(Blocks.WOLFRAMITE_ORE, new Item.Properties())),
+                prepare("acanthite_ore", new BlockItem(Ludo.Blocks.ACANTHITE_ORE, new Item.Properties())),
+                prepare("baryte_ore", new BlockItem(Ludo.Blocks.BARYTE_ORE, new Item.Properties())),
+                prepare("bauxite_ore", new BlockItem(Ludo.Blocks.BAUXITE_ORE, new Item.Properties())),
+                prepare("beryl_ore", new BlockItem(Ludo.Blocks.BERYL_ORE, new Item.Properties())),
+                prepare("bornite_ore", new BlockItem(Ludo.Blocks.BORNITE_ORE, new Item.Properties())),
+                prepare("cassiterite_ore", new BlockItem(Ludo.Blocks.CASSITERITE_ORE, new Item.Properties())),
+                prepare("chalcocite_ore", new BlockItem(Ludo.Blocks.CHALCOCITE_ORE, new Item.Properties())),
+                prepare("chalcopyrite_ore", new BlockItem(Ludo.Blocks.CHALCOPYRITE_ORE, new Item.Properties())),
+                prepare("chromite_ore", new BlockItem(Ludo.Blocks.CHROMITE_ORE, new Item.Properties())),
+                prepare("cinnabar_ore", new BlockItem(Ludo.Blocks.CINNABAR_ORE, new Item.Properties())),
+                prepare("cobaltite_ore", new BlockItem(Ludo.Blocks.COBALTITE_ORE, new Item.Properties())),
+                prepare("coltan_ore", new BlockItem(Ludo.Blocks.COLTAN_ORE, new Item.Properties())),
+                prepare("galena_ore", new BlockItem(Ludo.Blocks.GALENA_ORE, new Item.Properties())),
+                prepare("hematite_ore", new BlockItem(Ludo.Blocks.HEMATITE_ORE, new Item.Properties())),
+                prepare("ilmenite_ore", new BlockItem(Ludo.Blocks.ILMENITE_ORE, new Item.Properties())),
+                prepare("magnetite_ore", new BlockItem(Ludo.Blocks.MAGNETITE_ORE, new Item.Properties())),
+                prepare("malachite_ore", new BlockItem(Ludo.Blocks.MALACHITE_ORE, new Item.Properties())),
+                prepare("molybdenite_ore", new BlockItem(Ludo.Blocks.MOLYBDENITE_ORE, new Item.Properties())),
+                prepare("pentalandite_ore", new BlockItem(Ludo.Blocks.PENTALANDITE_ORE, new Item.Properties())),
+                prepare("pyrolusite_ore", new BlockItem(Ludo.Blocks.PYROLUSITE_ORE, new Item.Properties())),
+                prepare("scheelite_ore", new BlockItem(Ludo.Blocks.SCHEELITE_ORE, new Item.Properties())),
+                prepare("sperrylite_ore", new BlockItem(Ludo.Blocks.SPERRYLITE_ORE, new Item.Properties())),
+                prepare("sphalerite_ore", new BlockItem(Ludo.Blocks.SPHALERITE_ORE, new Item.Properties())),
+                prepare("uranitite_ore", new BlockItem(Ludo.Blocks.URANITITE_ORE, new Item.Properties())),
+                prepare("wolframite_ore", new BlockItem(Ludo.Blocks.WOLFRAMITE_ORE, new Item.Properties())),
                 // MATERIALS
                 prepare("soft_pebble", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
                 prepare("hard_pebble", new Item(new Properties().group(LudoItemGroup.MATERIALS))),
