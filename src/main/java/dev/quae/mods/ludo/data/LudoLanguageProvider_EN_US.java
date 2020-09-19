@@ -59,6 +59,15 @@ public final class LudoLanguageProvider_EN_US extends LanguageProvider {
         //Element
         this.add(Element.HYDROGEN, "Hydrogen");
         this.add(Element.HELIUM, "Helium");
+        this.add(Element.LITHIUM, "Lithium");
+        this.add(Element.BERYLLIUM, "Beryllium");
+        this.add(Element.BORON, "Boron");
+        this.add(Element.CARBON, "Carbon");
+        this.add(Element.NITROGEN, "Nitrogen");
+        this.add(Element.OXYGEN, "Oxygen");
+        this.add(Element.FLUORINE, "Fluorine");
+        this.add(Element.NEON, "Neon");
+        this.add(Element.SODIUM, "Sodium");
         
         //ISOTOPES
         this.add(Hydrogen.ISO1.getIso(), "Protium");
