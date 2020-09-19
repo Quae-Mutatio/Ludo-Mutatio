@@ -1,5 +1,10 @@
 package dev.quae.mods.ludo.setup;
 
+import static net.minecraft.block.AbstractBlock.Properties.from;
+import static net.minecraft.tileentity.TileEntityType.Builder.create;
+import static net.minecraft.util.registry.Registry.CUSTOM_STAT;
+import static net.minecraft.util.registry.Registry.register;
+
 import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.block.CampfireSmelterBlock;
 import dev.quae.mods.ludo.block.LeavesPileBlock;
@@ -9,14 +14,20 @@ import dev.quae.mods.ludo.item.StoneBowlItem;
 import dev.quae.mods.ludo.itemgroup.LudoItemGroup;
 import dev.quae.mods.ludo.recipe.TwoHandedRecipe;
 import dev.quae.mods.ludo.tileentity.CampfireSmelterTileEntity;
-import net.minecraft.block.*;
+import net.minecraft.block.AbstractBlock;
+import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
+import net.minecraft.block.OreBlock;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.inventory.container.ContainerType;
-import net.minecraft.item.*;
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
 import net.minecraft.item.Item.Properties;
+import net.minecraft.item.ItemTier;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.stats.IStatFormatter;
 import net.minecraft.stats.StatType;
@@ -35,11 +46,6 @@ import net.minecraftforge.registries.IForgeRegistryEntry;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import static net.minecraft.block.AbstractBlock.Properties.from;
-import static net.minecraft.tileentity.TileEntityType.Builder.create;
-import static net.minecraft.util.registry.Registry.CUSTOM_STAT;
-import static net.minecraft.util.registry.Registry.register;
-
 @EventBusSubscriber(bus = Bus.MOD, modid = Ludo.ID)
 public final class Registry {
     private static final Logger LOGGER = LogManager.getLogger();
@@ -50,7 +56,7 @@ public final class Registry {
         event.getRegistry().registerAll(
                 prepare("campfire_smelter", new CampfireSmelterBlock(true, 1, from(Blocks.CAMPFIRE))),
                 prepare("leaves_pile", new LeavesPileBlock(AbstractBlock.Properties.create(Material.LEAVES).sound(SoundType.WET_GRASS).hardnessAndResistance(2.0f).notSolid().setOpaque((p_test_1_, p_test_2_, p_test_3_) -> false).setAllowsSpawn((p_test_1_, p_test_2_, p_test_3_, p_test_4_) -> false).setSuffocates((p_test_1_, p_test_2_, p_test_3_) -> false).noDrops())),
-                
+
                 //Ores
                 prepare("acanthite_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),
                 prepare("baryte_ore", new OreBlock(AbstractBlock.Properties.create(Material.ROCK).hardnessAndResistance(2F).setRequiresTool().harvestTool(ToolType.PICKAXE).harvestLevel(5))),

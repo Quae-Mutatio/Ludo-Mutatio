@@ -2,6 +2,10 @@ package dev.quae.mods.ludo.tileentity;
 
 import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.block.CampfireSmelterBlock;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Random;
+import javax.annotation.Nonnull;
 import net.minecraft.block.BlockState;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.InventoryHelper;
@@ -21,11 +25,6 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.Nullable;
-
-import javax.annotation.Nonnull;
-import java.util.Objects;
-import java.util.Optional;
-import java.util.Random;
 
 public class CampfireSmelterTileEntity extends TileEntity implements ITickableTileEntity {
     private final LazyOptional<IItemHandler> inventoryLO = LazyOptional.of(this::getInventory);

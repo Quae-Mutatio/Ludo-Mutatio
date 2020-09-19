@@ -1,7 +1,14 @@
 package dev.quae.mods.ludo.setup;
 
 import dev.quae.mods.ludo.Ludo;
-import dev.quae.mods.ludo.data.*;
+import dev.quae.mods.ludo.data.LudoBlockStateProvider;
+import dev.quae.mods.ludo.data.LudoBlockTagsProvider;
+import dev.quae.mods.ludo.data.LudoItemModelProvider;
+import dev.quae.mods.ludo.data.LudoItemTagsProvider;
+import dev.quae.mods.ludo.data.LudoLanguageProvider_EN_US;
+import dev.quae.mods.ludo.data.LudoLanguageProvider_NL_NL;
+import dev.quae.mods.ludo.data.LudoLootTableProvider;
+import dev.quae.mods.ludo.data.LudoRecipeProvider;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

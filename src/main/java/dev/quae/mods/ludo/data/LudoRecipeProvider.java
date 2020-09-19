@@ -3,12 +3,11 @@ package dev.quae.mods.ludo.data;
 import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.Ludo.Tags;
 import dev.quae.mods.ludo.data.recipe.TwoHandedRecipeBuilder;
+import java.util.function.Consumer;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.IFinishedRecipe;
 import net.minecraft.data.RecipeProvider;
 import net.minecraft.item.Items;
-
-import java.util.function.Consumer;
 
 public final class LudoRecipeProvider extends RecipeProvider {
     public LudoRecipeProvider(final DataGenerator generatorIn) {

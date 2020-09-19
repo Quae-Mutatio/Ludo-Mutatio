@@ -2,11 +2,13 @@ package dev.quae.mods.ludo.data;
 
 import dev.quae.mods.ludo.Ludo;
 import javax.annotation.Nullable;
-import net.minecraft.data.*;
+import net.minecraft.data.BlockTagsProvider;
+import net.minecraft.data.DataGenerator;
+import net.minecraft.data.ItemTagsProvider;
 import net.minecraftforge.common.Tags;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-public final class LudoItemTagsProvider extends ItemTagsProvider{
+public final class LudoItemTagsProvider extends ItemTagsProvider {
     public LudoItemTagsProvider(final DataGenerator dataGenerator, final BlockTagsProvider blockTagProvider, @Nullable final ExistingFileHelper existingFileHelper) {
         super(dataGenerator, blockTagProvider, Ludo.ID, existingFileHelper);
     }
@@ -39,7 +41,7 @@ public final class LudoItemTagsProvider extends ItemTagsProvider{
                 .add(Ludo.Items.SPHALERITE_ORE)
                 .add(Ludo.Items.URANITITE_ORE)
                 .add(Ludo.Items.WOLFRAMITE_ORE);
-        
+
         this.getOrCreateBuilder(Ludo.Tags.Items.WOODEN_PLATES)
                 .add(Ludo.Items.OAK_WOODEN_PLATE)
                 .add(Ludo.Items.BIRCH_WOODEN_PLATE)

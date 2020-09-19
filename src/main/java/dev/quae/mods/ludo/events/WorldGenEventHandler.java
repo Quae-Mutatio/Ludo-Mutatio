@@ -1,9 +1,7 @@
 package dev.quae.mods.ludo.events;
 
 import dev.quae.mods.ludo.Ludo;
-import dev.quae.mods.ludo.worldgen.Ores;
 import net.minecraft.world.biome.Biome.Category;
-import net.minecraft.world.gen.GenerationStage;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.SubscribeEvent;

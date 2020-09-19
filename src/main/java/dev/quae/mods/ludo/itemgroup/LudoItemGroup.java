@@ -1,8 +1,8 @@
 package dev.quae.mods.ludo.itemgroup;
 
 import dev.quae.mods.ludo.Ludo;
-import dev.quae.mods.ludo.Ludo.Items;
 import dev.quae.mods.ludo.Ludo.Blocks;
+import dev.quae.mods.ludo.Ludo.Items;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 

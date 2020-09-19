@@ -1,5 +1,5 @@
 package dev.quae.mods.ludo.materials.isotopes;
 
-public interface IIsotope{
-	Isotope getIso();
+public interface IIsotope {
+    Isotope getIso();
 }

@@ -2,6 +2,8 @@ package dev.quae.mods.ludo.data.loot;
 
 import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.Ludo.Blocks;
+import java.util.Objects;
+import java.util.stream.Collectors;
 import net.minecraft.block.Block;
 import net.minecraft.data.loot.BlockLootTables;
 import net.minecraft.item.Items;
@@ -9,9 +11,6 @@ import net.minecraft.loot.ConstantRange;
 import net.minecraft.loot.ItemLootEntry;
 import net.minecraft.loot.functions.SetCount;
 import net.minecraftforge.registries.ForgeRegistries;
-
-import java.util.Objects;
-import java.util.stream.Collectors;
 
 public final class LudoBlockLootTables extends BlockLootTables {
     @Override

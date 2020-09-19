@@ -42,7 +42,7 @@ public class Ludo {
     public static final class Blocks {
         public static final Block CAMPFIRE_SMELTER = null;
         public static final Block LEAVES_PILE = null;
-        
+
         public static final Block ACANTHITE_ORE = null; //Silver
         public static final Block BARYTE_ORE = null; //Barium
         public static final Block BAUXITE_ORE = null; //Aluminium
@@ -98,7 +98,7 @@ public class Ludo {
         public static final Item SPHALERITE_ORE = null; //Zinc
         public static final Item URANITITE_ORE = null; //Uranium
         public static final Item WOLFRAMITE_ORE = null; //Tungsten/Iron/Manganese
-        
+
         //Materials
         public static final Item SOFT_PEBBLE = null;
         public static final Item HARD_PEBBLE = null;

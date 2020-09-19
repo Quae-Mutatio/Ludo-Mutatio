@@ -39,7 +39,7 @@ public final class LudoBlockStateProvider extends BlockStateProvider {
         //this.simpleBlock(Ludo.Blocks.SPHALERITE_ORE);
         //this.simpleBlock(Ludo.Blocks.URANITITE_ORE);
         //this.simpleBlock(Ludo.Blocks.WOLFRAMITE_ORE);
-        
+
         this.simpleBlock(Ludo.Blocks.LEAVES_PILE, this.models().getBuilder("leaves_pile")
                 .parent(this.models().getExistingFile(this.mcLoc("block/thin_block")))
                 .texture("particle", this.blockTexture(Blocks.OAK_LEAVES))

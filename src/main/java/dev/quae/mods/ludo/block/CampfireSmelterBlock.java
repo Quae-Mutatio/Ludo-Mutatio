@@ -2,6 +2,7 @@ package dev.quae.mods.ludo.block;
 
 import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.tileentity.CampfireSmelterTileEntity;
+import java.util.Optional;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.CampfireBlock;
 import net.minecraft.entity.player.PlayerEntity;
@@ -15,8 +16,6 @@ import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorldReader;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Optional;
 
 public class CampfireSmelterBlock extends CampfireBlock {
     public CampfireSmelterBlock(boolean smokey, int fireDamage, Properties properties) {

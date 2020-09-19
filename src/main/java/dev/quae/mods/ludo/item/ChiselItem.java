@@ -1,14 +1,13 @@
 package dev.quae.mods.ludo.item;
 
 import com.google.common.collect.ImmutableSet;
+import java.util.Set;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;
 import net.minecraft.item.IItemTier;
 import net.minecraft.item.Item;
 import net.minecraft.item.ToolItem;
 import net.minecraftforge.common.ToolType;
-
-import java.util.Set;
 
 public class ChiselItem extends ToolItem {
     private static final Set<Block> effectiveBlocks = ImmutableSet.of(

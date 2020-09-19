@@ -3,7 +3,10 @@ package dev.quae.mods.ludo.data;
 import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.itemgroup.LudoItemGroup;
 import dev.quae.mods.ludo.materials.elements.Element;
-import dev.quae.mods.ludo.materials.isotopes.*;
+import dev.quae.mods.ludo.materials.isotopes.Helium;
+import dev.quae.mods.ludo.materials.isotopes.Hydrogen;
+import dev.quae.mods.ludo.materials.isotopes.Isotope;
+import dev.quae.mods.ludo.materials.isotopes.Lithium;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -55,7 +58,7 @@ public final class LudoLanguageProvider_EN_US extends LanguageProvider {
 
         // ERRORS
         this.add("error.leaf.not_enough", "You need 8 leaves to make a pile");
-        
+
         //Element
         this.add(Element.HYDROGEN, "Hydrogen");
         this.add(Element.HELIUM, "Helium");
@@ -68,7 +71,7 @@ public final class LudoLanguageProvider_EN_US extends LanguageProvider {
         this.add(Element.FLUORINE, "Fluorine");
         this.add(Element.NEON, "Neon");
         this.add(Element.SODIUM, "Sodium");
-        
+
         //ISOTOPES
         this.add(Hydrogen.ISO1.getIso(), "Protium");
         this.add(Hydrogen.ISO2.getIso(), "Deuterium");
@@ -77,7 +80,7 @@ public final class LudoLanguageProvider_EN_US extends LanguageProvider {
         this.add(Hydrogen.ISO5.getIso(), "Hydrogen-5");
         this.add(Hydrogen.ISO6.getIso(), "Hydrogen-6");
         this.add(Hydrogen.ISO7.getIso(), "Hydrogen-7");
-        
+
         this.add(Helium.ISO2.getIso(), "Diproton");
         this.add(Helium.ISO3.getIso(), "Helium-3");
         this.add(Helium.ISO4.getIso(), "Helium-4");
@@ -87,7 +90,7 @@ public final class LudoLanguageProvider_EN_US extends LanguageProvider {
         this.add(Helium.ISO8.getIso(), "Helium-8");
         this.add(Helium.ISO9.getIso(), "Helium-9");
         this.add(Helium.ISO10.getIso(), "Helium-10");
-        
+
         this.add(Lithium.ISO3.getIso(), "Triproton");
         this.add(Lithium.ISO4.getIso(), "Lithium-4");
         this.add(Lithium.ISO5.getIso(), "Lithium-5");
@@ -104,12 +107,12 @@ public final class LudoLanguageProvider_EN_US extends LanguageProvider {
     private void addItemGroup(ItemGroup group, String translation) {
         this.add("itemGroup." + group.getPath(), translation);
     }
-    
-    private void add(Isotope isotope, String translation){
-        this.add(((TranslationTextComponent)isotope.getName()).getKey(), translation);
+
+    private void add(Isotope isotope, String translation) {
+        this.add(((TranslationTextComponent) isotope.getName()).getKey(), translation);
     }
-    
-    private void add(Element element, String translation){
-        this.add(((TranslationTextComponent)element.getName()).getKey(), translation);
+
+    private void add(Element element, String translation) {
+        this.add(((TranslationTextComponent) element.getName()).getKey(), translation);
     }
 }
