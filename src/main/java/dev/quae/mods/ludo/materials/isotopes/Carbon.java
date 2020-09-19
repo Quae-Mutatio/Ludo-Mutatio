@@ -24,6 +24,6 @@ public enum Carbon implements IIsotope {
     }
 
     public Isotope getIso() {
-        return iso;
+        return this.iso;
     }
 }

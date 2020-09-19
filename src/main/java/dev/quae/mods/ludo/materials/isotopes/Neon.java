@@ -28,6 +28,6 @@ public enum Neon implements IIsotope {
     }
 
     public Isotope getIso() {
-        return iso;
+        return this.iso;
     }
 }

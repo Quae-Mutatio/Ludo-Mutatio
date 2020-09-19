@@ -27,6 +27,6 @@ public enum Fluorine implements IIsotope {
     }
 
     public Isotope getIso() {
-        return iso;
+        return this.iso;
     }
 }

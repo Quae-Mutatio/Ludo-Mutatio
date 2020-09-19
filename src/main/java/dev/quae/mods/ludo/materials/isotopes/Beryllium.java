@@ -21,6 +21,6 @@ public enum Beryllium implements IIsotope {
     }
 
     public Isotope getIso() {
-        return iso;
+        return this.iso;
     }
 }

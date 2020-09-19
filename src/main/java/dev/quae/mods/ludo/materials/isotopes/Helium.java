@@ -18,6 +18,6 @@ public enum Helium implements IIsotope {
     }
 
     public Isotope getIso() {
-        return iso;
+        return this.iso;
     }
 }

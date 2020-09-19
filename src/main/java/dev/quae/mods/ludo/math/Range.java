@@ -14,10 +14,10 @@ public class Range {
     }
 
     public int getBegin() {
-        return begin;
+        return this.begin;
     }
 
     public int getEnd() {
-        return end;
+        return this.end;
     }
 }

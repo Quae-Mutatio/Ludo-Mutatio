@@ -8,7 +8,7 @@ public class Isotope {
     private final int protons;
     private final int neutrons;
     private final int electrons;
-    private ITextComponent name;
+    private final ITextComponent name;
 
     public Isotope(int p, int n, int e, String name) {
         this.protons = p;
@@ -18,18 +18,18 @@ public class Isotope {
     }
 
     public int getProtons() {
-        return protons;
+        return this.protons;
     }
 
     public int getNeutrons() {
-        return neutrons;
+        return this.neutrons;
     }
 
     public int getElectrons() {
-        return electrons;
+        return this.electrons;
     }
 
     public ITextComponent getName() {
-        return name;
+        return this.name;
     }
 }
