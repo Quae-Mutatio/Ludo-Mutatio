@@ -1,6 +1,5 @@
 run/
 out/
-.idea/
 .gradle
 build/
 *.iml
@@ -77,3 +76,7 @@ gradle-app.setting
 !gradle-wrapper.jar
 .gradletasknamecache
 **/build/
+
+# Ignore anything inside the .idea dir, except the codeStyles
+.idea/**/**.*
+!.idea/codeStyles/*.xml
