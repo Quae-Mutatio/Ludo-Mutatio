@@ -33,6 +33,11 @@ public final class TwoHandedRecipe implements IRecipe<PlayerInventory> {
     }
 
     @Override
+    public NonNullList<Ingredient> getIngredients() {
+        return ingredients;
+    }
+
+    @Override
     public boolean matches(final PlayerInventory inv, final World worldIn) {
         return RecipeMatcher.findMatches(ImmutableList.of(inv.getCurrentItem(), inv.offHandInventory.get(0)), this.ingredients) != null;
     }
