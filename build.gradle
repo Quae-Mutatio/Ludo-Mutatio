@@ -27,13 +27,17 @@ repositories {
         name = "Progwml6 maven" // JEI
         url = "https://dvs1.progwml6.com/files/maven/"
     }
+    maven {
+        name = "ModMaven"
+        url = "https://modmaven.k-4u.nl"
+    }
 }
 
 dependencies {
     minecraft "net.minecraftforge:forge:${property('mc.version')}-${property('forge.version')}"
 
-    compileOnly fg.deobf("mezz.jei:jei-1.16.2:${property('jei.version')}:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.16.2:${property('jei.version')}")
+    compileOnly fg.deobf("mezz.jei:jei-1.16.3:${property('jei.version')}:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-1.16.3:${property('jei.version')}")
 
     implementation 'com.intellij:annotations:+@jar'
 }
