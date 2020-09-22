@@ -28,6 +28,10 @@
   "itemGroup.ludomutatio.materials": "Ludo Mutatio Materials",
   "itemGroup.ludomutatio.resources": "Ludo Mutatio Resources",
   "itemGroup.ludomutatio.tools": "Ludo Mutatio Tools",
+  "ludomutatio.beryllium": "Beryllium",
+  "ludomutatio.boron": "Boron",
+  "ludomutatio.carbon": "Carbon",
+  "ludomutatio.fluorine": "Fluorine",
   "ludomutatio.helium": "Helium",
   "ludomutatio.helium.10": "Helium-10",
   "ludomutatio.helium.2": "Diproton",
@@ -46,6 +50,7 @@
   "ludomutatio.hydrogen.5": "Hydrogen-5",
   "ludomutatio.hydrogen.6": "Hydrogen-6",
   "ludomutatio.hydrogen.7": "Hydrogen-7",
+  "ludomutatio.lithium": "Lithium",
   "ludomutatio.lithium.10": "Lithium-10",
   "ludomutatio.lithium.11": "Lithium-11",
   "ludomutatio.lithium.12": "Lithium-12",
@@ -57,5 +62,9 @@
   "ludomutatio.lithium.7": "Lithium-7",
   "ludomutatio.lithium.8": "Lithium-8",
   "ludomutatio.lithium.9": "Lithium-9",
+  "ludomutatio.neon": "Neon",
+  "ludomutatio.nitrogen": "Nitrogen",
+  "ludomutatio.oxygen": "Oxygen",
+  "ludomutatio.sodium": "Sodium",
   "tooltip.campfire_smelter.recipe": "Creates {0} when cooked in a bowl on a campfire"
 }
