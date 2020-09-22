@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "ludomutatio:item/hammer/layer_0",
+    "layer1": "ludomutatio:item/hammer/layer_1",
+    "layer2": "ludomutatio:item/hammer/layer_2",
+    "layer3": "ludomutatio:item/hammer/layer_3",
+    "layer4": "ludomutatio:item/hammer/layer_4",
+    "layer5": "ludomutatio:item/hammer/layer_5",
+    "layer6": "ludomutatio:item/hammer/layer_6"
+  }
+}

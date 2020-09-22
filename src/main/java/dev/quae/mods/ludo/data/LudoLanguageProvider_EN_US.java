@@ -47,6 +47,12 @@ public final class LudoLanguageProvider_EN_US extends LanguageProvider {
         this.add(Ludo.Items.GOLD_CHISEL, "Gold Chisel");
         this.add(Ludo.Items.DIAMOND_CHISEL, "Diamond Chisel");
         this.add(Ludo.Items.NETHERITE_CHISEL, "Netherite Chisel");
+        this.add(Ludo.Items.WOODEN_HAMMER, "Wooden Hammer");
+        this.add(Ludo.Items.STONE_HAMMER, "Stone Hammer");
+        this.add(Ludo.Items.IRON_HAMMER, "Iron Hammer");
+        this.add(Ludo.Items.GOLD_HAMMER, "Gold Hammer");
+        this.add(Ludo.Items.DIAMOND_HAMMER, "Diamond Hammer");
+        this.add(Ludo.Items.NETHERITE_HAMMER, "Netherite Hammer");
 
         // TOOLTIPS
         this.add("tooltip.campfire_smelter.recipe", "Creates {0} when cooked in a bowl on a campfire");

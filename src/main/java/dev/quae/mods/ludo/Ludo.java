@@ -4,6 +4,7 @@ import dev.quae.mods.ludo.recipe.TwoHandedRecipe;
 import dev.quae.mods.ludo.setup.Registry;
 import dev.quae.mods.ludo.tileentity.CampfireSmelterTileEntity;
 import net.minecraft.block.Block;
+import net.minecraft.client.renderer.model.ItemModelGenerator;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;
@@ -26,12 +27,15 @@ public class Ludo {
 
     public Ludo() {
         SharedConstants.useDatafixers = false;
+        ItemModelGenerator.LAYERS.add("layer_5");
+        ItemModelGenerator.LAYERS.add("layer_6");
+        ItemModelGenerator.LAYERS.add("layer_7");
+        ItemModelGenerator.LAYERS.add("layer_8");
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
     }
 
     @SuppressWarnings("Convert2MethodRef")
     private void clientSetup(final FMLClientSetupEvent event) {
-        event.enqueueWork(() -> Registry.onRegisterBlockColors());
         event.enqueueWork(() -> Registry.onRegisterBlockRenderLayers());
     }
 
@@ -127,6 +131,12 @@ public class Ludo {
         public static final Item GOLD_CHISEL = null;
         public static final Item DIAMOND_CHISEL = null;
         public static final Item NETHERITE_CHISEL = null;
+        public static final Item WOODEN_HAMMER = null;
+        public static final Item STONE_HAMMER = null;
+        public static final Item IRON_HAMMER = null;
+        public static final Item GOLD_HAMMER = null;
+        public static final Item DIAMOND_HAMMER = null;
+        public static final Item NETHERITE_HAMMER = null;
     }
 
     @ObjectHolder(ID)

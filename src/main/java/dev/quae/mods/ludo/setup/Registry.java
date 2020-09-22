@@ -6,9 +6,11 @@ import static net.minecraft.util.registry.Registry.CUSTOM_STAT;
 import static net.minecraft.util.registry.Registry.register;
 
 import dev.quae.mods.ludo.Ludo;
+import dev.quae.mods.ludo.Ludo.Items;
 import dev.quae.mods.ludo.block.CampfireSmelterBlock;
 import dev.quae.mods.ludo.block.LeavesPileBlock;
 import dev.quae.mods.ludo.item.ChiselItem;
+import dev.quae.mods.ludo.item.HammerItem;
 import dev.quae.mods.ludo.item.ItemLeaf;
 import dev.quae.mods.ludo.item.StoneBowlItem;
 import dev.quae.mods.ludo.itemgroup.LudoItemGroup;
@@ -37,6 +39,7 @@ import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.FoliageColors;
 import net.minecraft.world.biome.BiomeColors;
+import net.minecraftforge.client.event.ColorHandlerEvent;
 import net.minecraftforge.common.ToolType;
 import net.minecraftforge.event.RegistryEvent.Register;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -142,7 +145,13 @@ public final class Registry {
                 prepare("iron_chisel", new ChiselItem(ItemTier.IRON, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS))),
                 prepare("gold_chisel", new ChiselItem(ItemTier.GOLD, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS))),
                 prepare("diamond_chisel", new ChiselItem(ItemTier.DIAMOND, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS))),
-                prepare("netherite_chisel", new ChiselItem(ItemTier.NETHERITE, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isImmuneToFire()))
+                prepare("netherite_chisel", new ChiselItem(ItemTier.NETHERITE, 1.0F, -2.5F, new Properties().group(LudoItemGroup.TOOLS).isImmuneToFire())),
+                prepare("wooden_hammer", new HammerItem(ItemTier.WOOD, 2.5F, -3.5F, new Properties().group(LudoItemGroup.TOOLS))),
+                prepare("stone_hammer", new HammerItem(ItemTier.STONE, 2.5F, -3.5F, new Properties().group(LudoItemGroup.TOOLS))),
+                prepare("iron_hammer", new HammerItem(ItemTier.IRON, 2.5F, -3.5F, new Properties().group(LudoItemGroup.TOOLS))),
+                prepare("gold_hammer", new HammerItem(ItemTier.GOLD, 2.5F, -3.5F, new Properties().group(LudoItemGroup.TOOLS))),
+                prepare("diamond_hammer", new HammerItem(ItemTier.DIAMOND, 2.5F, -3.5F, new Properties().group(LudoItemGroup.TOOLS))),
+                prepare("netherite_hammer", new HammerItem(ItemTier.NETHERITE, 2.5F, -3.5F, new Properties().group(LudoItemGroup.TOOLS).isImmuneToFire()))
         );
     }
 
@@ -177,6 +186,39 @@ public final class Registry {
         addStat(Ludo.Stats.CREATED_CAMPFIRE_SMELTER, IStatFormatter.DEFAULT);
     }
 
+    @SubscribeEvent
+    public static void onRegisterBlockColors(final ColorHandlerEvent.Block event) {
+        event.getBlockColors().register((state, world, pos, tintIndex) -> {
+            if (world != null && pos != null) {
+                return BiomeColors.getFoliageColor(world, pos);
+            }
+            return FoliageColors.getDefault();
+        }, Ludo.Blocks.LEAVES_PILE);
+    }
+
+    @SubscribeEvent
+    public static void onRegisterItemColors(final ColorHandlerEvent.Item event) {
+        event.getItemColors().register((stack, tintIndex) -> {
+            switch (tintIndex) {
+                case 0:
+                default:
+                    return -1;       // DEFAULT
+                case 1:
+                    return 0x20180A; // DARKEST
+                case 2:
+                    return 0x372910; // DARKER
+                case 3:
+                    return 0x493615; // DARK
+                case 4:
+                    return 0x6A501E; // LIGHT
+                case 5:
+                    return 0x755821; // LIGHTER
+                case 6:
+                    return 0x896727; // LIGHTEST
+            }
+        }, Items.WOODEN_HAMMER);
+    }
+
     private static <T extends IForgeRegistryEntry<T>> T prepare(String name, T t) {
         return t.setRegistryName(new ResourceLocation(Ludo.ID, name));
     }
@@ -189,15 +231,6 @@ public final class Registry {
     private static void addStat(ResourceLocation name, IStatFormatter formatter) {
         register(CUSTOM_STAT, name, name);
         Stats.CUSTOM.get(name, formatter);
-    }
-
-    public static void onRegisterBlockColors() {
-        Minecraft.getInstance().getBlockColors().register((state, world, pos, tintIndex) -> {
-            if (world != null && pos != null) {
-                return BiomeColors.getFoliageColor(world, pos);
-            }
-            return FoliageColors.getDefault();
-        }, Ludo.Blocks.LEAVES_PILE);
     }
 
     public static void onRegisterBlockRenderLayers() {

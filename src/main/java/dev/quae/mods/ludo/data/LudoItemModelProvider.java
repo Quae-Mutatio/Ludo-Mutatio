@@ -8,6 +8,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.client.model.generators.ItemModelBuilder;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.client.model.generators.ModelFile.UncheckedModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
@@ -34,11 +35,19 @@ public final class LudoItemModelProvider extends ItemModelProvider {
     }
 
     private void registerBasicItemModel(Item item) {
-        this.getBuilder(item.getRegistryName().getPath()).parent(new UncheckedModelFile("item/generated")).texture("layer0", this.getItemLoc(item));
+        this.registerItemModel(item, "item/generated", this.getItemLoc(item));
     }
 
     private void registerBasicItemModelWithBlockTexture(Item item, Block block) {
-        this.getBuilder(item.getRegistryName().getPath()).parent(new UncheckedModelFile("item/generated")).texture("layer0", this.getBlockLoc(block));
+        this.registerItemModel(item, "item/generated", this.getBlockLoc(block));
+    }
+
+    private void registerItemModelWithParent(Item item, String parent) {
+        this.registerItemModel(item, parent, this.getItemLoc(item));
+    }
+
+    private void registerItemModel(Item item, String parent, ResourceLocation texture) {
+        this.getBuilder(item.getRegistryName().getPath()).parent(new UncheckedModelFile(parent)).texture("layer0", texture);
     }
 
     private void registerBlockItem(Item item) {
@@ -46,6 +55,14 @@ public final class LudoItemModelProvider extends ItemModelProvider {
         final BlockItem blockItem = (BlockItem) item;
         final Block block = blockItem.getBlock();
         this.getBuilder(item.getRegistryName().getPath()).parent(new UncheckedModelFile(this.getBlockLoc(block)));
+    }
+
+    private void registerToolWithXLayers(Item item, String tool, int layers) {
+        final ResourceLocation itemName = item.getRegistryName();
+        final ItemModelBuilder model = this.getBuilder(itemName.getPath()).parent(new UncheckedModelFile("item/handheld"));
+        for (int i = 0; i < layers; i++) {
+            model.texture("layer" + i, this.getTextureLoc("item/" + tool, new ResourceLocation(itemName.getNamespace(), "/layer_" + i)));
+        }
     }
 
     @Override
@@ -99,11 +116,20 @@ public final class LudoItemModelProvider extends ItemModelProvider {
         this.registerBasicItemModel(Items.LEAF);
 
         // TOOLS
-        this.registerBasicItemModel(Items.WOODEN_CHISEL);
-        this.registerBasicItemModel(Items.STONE_CHISEL);
-        this.registerBasicItemModel(Items.IRON_CHISEL);
-        this.registerBasicItemModel(Items.GOLD_CHISEL);
-        this.registerBasicItemModel(Items.DIAMOND_CHISEL);
-        this.registerBasicItemModel(Items.NETHERITE_CHISEL);
+        this.registerItemModelWithParent(Items.WOODEN_CHISEL, "item/handheld");
+        this.registerItemModelWithParent(Items.STONE_CHISEL, "item/handheld");
+        this.registerItemModelWithParent(Items.IRON_CHISEL, "item/handheld");
+        this.registerItemModelWithParent(Items.GOLD_CHISEL, "item/handheld");
+        this.registerItemModelWithParent(Items.DIAMOND_CHISEL, "item/handheld");
+        this.registerItemModelWithParent(Items.NETHERITE_CHISEL, "item/handheld");
+
+//        this.registerItemModelWithParent(Items.WOODEN_HAMMER, "item/handheld");
+        this.registerToolWithXLayers(Items.WOODEN_HAMMER, "hammer", 7);
+        this.registerItemModelWithParent(Items.STONE_HAMMER, "item/handheld");
+        this.registerItemModelWithParent(Items.IRON_HAMMER, "item/handheld");
+        this.registerItemModelWithParent(Items.GOLD_HAMMER, "item/handheld");
+        this.registerItemModelWithParent(Items.DIAMOND_HAMMER, "item/handheld");
+        this.registerItemModelWithParent(Items.NETHERITE_HAMMER, "item/handheld");
+
     }
 }
