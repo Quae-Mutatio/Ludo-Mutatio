@@ -10,11 +10,10 @@ import dev.quae.mods.ludo.materials.isotopes.Lithium;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraftforge.common.data.LanguageProvider;
 
-public final class LudoLanguageProvider_EN_US extends LanguageProvider {
+public final class LudoLanguageProvider_EN_US extends LudoLanguageProvider {
     public LudoLanguageProvider_EN_US(DataGenerator gen, String locale) {
-        super(gen, Ludo.ID, locale);
+        super(gen, locale);
     }
 
     @Override
