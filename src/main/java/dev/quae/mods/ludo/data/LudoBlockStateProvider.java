@@ -25,10 +25,10 @@ public final class LudoBlockStateProvider extends BlockStateProvider {
         //this.simpleBlock(Ludo.Blocks.CHROMITE_ORE);
         //this.simpleBlock(Ludo.Blocks.CINNABAR_ORE);
         //this.simpleBlock(Ludo.Blocks.COBALTITE_ORE);
-        //this.simpleBlock(Ludo.Blocks.COLTAN_ORE);
-        //this.simpleBlock(Ludo.Blocks.GALENA_ORE);
-        //this.simpleBlock(Ludo.Blocks.HEMATITE_ORE);
-        //this.simpleBlock(Ludo.Blocks.ILMENITE_ORE);
+        this.simpleBlock(Ludo.Blocks.COLTAN_ORE);
+        this.simpleBlock(Ludo.Blocks.GALENA_ORE);
+        this.simpleBlock(Ludo.Blocks.HEMATITE_ORE);
+        this.simpleBlock(Ludo.Blocks.ILMENITE_ORE);
         //this.simpleBlock(Ludo.Blocks.MAGNETITE_ORE);
         //this.simpleBlock(Ludo.Blocks.MALACHITE_ORE);
         //this.simpleBlock(Ludo.Blocks.MOLYBDENITE_ORE);

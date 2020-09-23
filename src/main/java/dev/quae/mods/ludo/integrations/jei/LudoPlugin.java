@@ -6,7 +6,6 @@ import dev.quae.mods.ludo.Ludo.RecipeTypes;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.JeiPlugin;
 import mezz.jei.api.constants.VanillaTypes;
-import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
 import net.minecraft.client.Minecraft;
@@ -32,11 +31,8 @@ public class LudoPlugin implements IModPlugin {
         if(world!=null){
             registration.addRecipes(world.getRecipeManager().getRecipesForType(RecipeTypes.TWO_HANDED), TwoHandedCraftingCategory.UID);
         }
+        registration.addIngredientInfo(new ItemStack(Items.HARD_PEBBLE), VanillaTypes.ITEM, "Punch some stone to get pebbles!");
+        registration.addIngredientInfo(new ItemStack(Items.SOFT_PEBBLE), VanillaTypes.ITEM, "Punch some stone to get pebbles!");
         registration.addIngredientInfo(new ItemStack(Items.STONE_BOWL), VanillaTypes.ITEM, "Use a stone bowl on a campfire to access some early game resources!");
-    }
-
-    @Override
-    public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        registration.addRecipeCatalyst(new ItemStack(Items.STONE_CHISEL), TwoHandedCraftingCategory.UID);
     }
 }

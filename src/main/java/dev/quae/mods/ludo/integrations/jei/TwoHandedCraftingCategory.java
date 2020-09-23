@@ -22,7 +22,7 @@ public class TwoHandedCraftingCategory implements IRecipeCategory<TwoHandedRecip
 
     public TwoHandedCraftingCategory(IGuiHelper guiHelper){
         background = guiHelper.drawableBuilder(new ResourceLocation(Ludo.ID, "textures/gui/jei/two_handed_crafting.png"), 0, 0, 128, 28).setTextureSize(128, 28).build();
-        icon = guiHelper.createDrawableIngredient(new ItemStack(Items.STONE_CHISEL));
+        icon = guiHelper.drawableBuilder(new ResourceLocation(Ludo.ID, "textures/gui/jei/two_handed_crafting_recipe_category.png"), 0, 0, 16, 16).setTextureSize(16, 16).build();
     }
 
     @Override
