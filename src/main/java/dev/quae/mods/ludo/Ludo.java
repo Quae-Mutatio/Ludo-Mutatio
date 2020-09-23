@@ -27,16 +27,18 @@ public class Ludo {
 
     public Ludo() {
         SharedConstants.useDatafixers = false;
-        ItemModelGenerator.LAYERS.add("layer_5");
-        ItemModelGenerator.LAYERS.add("layer_6");
-        ItemModelGenerator.LAYERS.add("layer_7");
-        ItemModelGenerator.LAYERS.add("layer_8");
         FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
     }
 
     @SuppressWarnings("Convert2MethodRef")
     private void clientSetup(final FMLClientSetupEvent event) {
         event.enqueueWork(() -> Registry.onRegisterBlockRenderLayers());
+        event.enqueueWork(() -> {
+            ItemModelGenerator.LAYERS.add("layer5");
+            ItemModelGenerator.LAYERS.add("layer6");
+            ItemModelGenerator.LAYERS.add("layer7");
+            ItemModelGenerator.LAYERS.add("layer8");
+        });
     }
 
     @CapabilityInject(IItemHandler.class)

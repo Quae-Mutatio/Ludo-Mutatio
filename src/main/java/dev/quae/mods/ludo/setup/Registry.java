@@ -14,6 +14,7 @@ import dev.quae.mods.ludo.item.HammerItem;
 import dev.quae.mods.ludo.item.ItemLeaf;
 import dev.quae.mods.ludo.item.StoneBowlItem;
 import dev.quae.mods.ludo.itemgroup.LudoItemGroup;
+import dev.quae.mods.ludo.materials.VanillaMaterials;
 import dev.quae.mods.ludo.recipe.TwoHandedRecipe;
 import dev.quae.mods.ludo.tileentity.CampfireSmelterTileEntity;
 import net.minecraft.block.AbstractBlock;
@@ -198,25 +199,7 @@ public final class Registry {
 
     @SubscribeEvent
     public static void onRegisterItemColors(final ColorHandlerEvent.Item event) {
-        event.getItemColors().register((stack, tintIndex) -> {
-            switch (tintIndex) {
-                case 0:
-                default:
-                    return -1;       // DEFAULT
-                case 1:
-                    return 0x20180A; // DARKEST
-                case 2:
-                    return 0x372910; // DARKER
-                case 3:
-                    return 0x493615; // DARK
-                case 4:
-                    return 0x6A501E; // LIGHT
-                case 5:
-                    return 0x755821; // LIGHTER
-                case 6:
-                    return 0x896727; // LIGHTEST
-            }
-        }, Items.WOODEN_HAMMER);
+        event.getItemColors().register((stack, tintIndex) -> VanillaMaterials.WOOD.getColorFromTintIndex(tintIndex), Items.WOODEN_HAMMER);
     }
 
     private static <T extends IForgeRegistryEntry<T>> T prepare(String name, T t) {
