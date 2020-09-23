@@ -1,15 +1,13 @@
 package dev.quae.mods.ludo.data;
 
-import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.Ludo.Items;
 import dev.quae.mods.ludo.itemgroup.LudoItemGroup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.ItemGroup;
-import net.minecraftforge.common.data.LanguageProvider;
 
-public final class LudoLanguageProvider_NL_NL extends LanguageProvider {
+public final class LudoLanguageProvider_NL_NL extends LudoLanguageProvider {
     public LudoLanguageProvider_NL_NL(DataGenerator gen, String locale) {
-        super(gen, Ludo.ID, locale);
+        super(gen, locale);
     }
 
     @Override
