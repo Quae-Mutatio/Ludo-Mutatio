@@ -61,6 +61,9 @@ public final class LudoLanguageProvider_EN_US extends LudoLanguageProvider {
         this.addItemGroup(LudoItemGroup.TOOLS, "Ludo Mutatio Tools");
         this.addItemGroup(LudoItemGroup.RESOURCES, "Ludo Mutatio Resources");
 
+        //JEI
+        this.add(Ludo.ID + ".jei.title.two_handed_crafting", "Two Handed Crafting");
+
         // ERRORS
         this.add("error.leaf.not_enough", "You need 8 leaves to make a pile");
 
