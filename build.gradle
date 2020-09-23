@@ -27,10 +27,10 @@ repositories {
         name = "Progwml6 maven" // JEI
         url = "https://dvs1.progwml6.com/files/maven/"
     }
-    maven {
+    /*maven {
         name = "ModMaven"
         url = "https://modmaven.k-4u.nl"
-    }
+    }*/
     maven {
         name = "Heh"
         url 'https://maven.latmod.com/'
@@ -40,8 +40,8 @@ repositories {
 dependencies {
     minecraft "net.minecraftforge:forge:${property('mc.version')}-${property('forge.version')}"
 
-    compileOnly fg.deobf("mezz.jei:jei-1.16.3:${property('jei.version')}:api")
-    runtimeOnly fg.deobf("mezz.jei:jei-1.16.3:${property('jei.version')}")
+    compileOnly fg.deobf("mezz.jei:jei-${property('mc.version')}:${property('jei.version')}:api")
+    runtimeOnly fg.deobf("mezz.jei:jei-${property('mc.version')}:${property('jei.version')}")
     compileOnly fg.deobf('com.feed_the_beast.mods:ftb-gui-library:1.0.0.18')
 
     implementation 'com.intellij:annotations:+@jar'
