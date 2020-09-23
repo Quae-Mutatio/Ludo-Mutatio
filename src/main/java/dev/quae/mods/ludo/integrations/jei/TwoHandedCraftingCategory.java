@@ -21,7 +21,7 @@ public class TwoHandedCraftingCategory implements IRecipeCategory<TwoHandedRecip
     private final IDrawable background;
 
     public TwoHandedCraftingCategory(IGuiHelper guiHelper){
-        background = guiHelper.drawableBuilder(new ResourceLocation("whatever"), 0, 168, 125, 18).addPadding(0, 20, 0, 0).build();
+        background = guiHelper.drawableBuilder(new ResourceLocation(Ludo.ID, "textures/gui/jei/two_handed_crafting.png"), 0, 0, 128, 28).setTextureSize(128, 28).build();
         icon = guiHelper.createDrawableIngredient(new ItemStack(Items.STONE_CHISEL));
     }
 
@@ -59,9 +59,9 @@ public class TwoHandedCraftingCategory implements IRecipeCategory<TwoHandedRecip
     @Override
     public void setRecipe(IRecipeLayout iRecipeLayout, TwoHandedRecipe jeiTwoHandedCraftingRecipe, IIngredients iIngredients) {
         IGuiItemStackGroup guiItemStacks = iRecipeLayout.getItemStacks();
-        guiItemStacks.init(0, true, 0, 0);
-        guiItemStacks.init(1, true, 50, 0);
-        guiItemStacks.init(2, false, 100, 0);
+        guiItemStacks.init(0, true, 5, 5);
+        guiItemStacks.init(1, true, 105, 5);
+        guiItemStacks.init(2, false, 55, 5);//todo scale the output item rendering to 1.50
         guiItemStacks.set(iIngredients);
     }
 }
