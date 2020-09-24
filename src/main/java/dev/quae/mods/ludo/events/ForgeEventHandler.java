@@ -2,6 +2,8 @@ package dev.quae.mods.ludo.events;
 
 import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.Ludo.RecipeTypes;
+import dev.quae.mods.ludo.materials.elements.Element;
+import dev.quae.mods.ludo.materials.isotopes.IIsotope;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.client.Minecraft;

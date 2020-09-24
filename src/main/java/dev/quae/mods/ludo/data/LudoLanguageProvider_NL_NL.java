@@ -1,9 +1,16 @@
 package dev.quae.mods.ludo.data;
 
+import dev.quae.mods.ludo.Ludo;
 import dev.quae.mods.ludo.Ludo.Items;
 import dev.quae.mods.ludo.itemgroup.LudoItemGroup;
+import dev.quae.mods.ludo.materials.elements.Element;
+import dev.quae.mods.ludo.materials.isotopes.Helium;
+import dev.quae.mods.ludo.materials.isotopes.Hydrogen;
+import dev.quae.mods.ludo.materials.isotopes.Isotope;
+import dev.quae.mods.ludo.materials.isotopes.Lithium;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.util.text.TranslationTextComponent;
 
 public final class LudoLanguageProvider_NL_NL extends LudoLanguageProvider {
     public LudoLanguageProvider_NL_NL(DataGenerator gen, String locale) {
@@ -40,6 +47,12 @@ public final class LudoLanguageProvider_NL_NL extends LudoLanguageProvider {
         this.add(Items.GOLD_CHISEL, "Gouden Beitel");
         this.add(Items.DIAMOND_CHISEL, "Diamanten Beitel");
         this.add(Items.NETHERITE_CHISEL, "Netherite Beitel");
+        this.add(Ludo.Items.WOODEN_HAMMER, "Houten Hamer");
+        this.add(Ludo.Items.STONE_HAMMER, "Stenen Hamer");
+        this.add(Ludo.Items.IRON_HAMMER, "IJzeren Hamer");
+        this.add(Ludo.Items.GOLD_HAMMER, "Gouden Hamer");
+        this.add(Ludo.Items.DIAMOND_HAMMER, "Diamanten Hamer");
+        this.add(Ludo.Items.NETHERITE_HAMMER, "Netherite Hamer");
 
         // TOOLTIPS
         this.add("tooltip.campfire_smelter.recipe", "Maakt {0} wanneer gekookt in een kom op een kampvuur");
@@ -49,11 +62,38 @@ public final class LudoLanguageProvider_NL_NL extends LudoLanguageProvider {
         this.addItemGroup(LudoItemGroup.TOOLS, "Ludo Mutatio Gereedschappen");
         this.addItemGroup(LudoItemGroup.RESOURCES, "Ludo Mutatio Grondstoffen");
 
+        //JEI
+        this.add(Ludo.ID + ".jei.title.two_handed_crafting", "Tweehandig Vervaardigen");
+
+        //Element
+        this.addElement(Element.HYDROGEN, "Waterstof");
+        this.addElement(Element.HELIUM, "Helium");
+        this.addElement(Element.LITHIUM, "Lithium");
+        this.addElement(Element.BERYLLIUM, "Beryllium");
+        this.addElement(Element.BORON, "Boor");
+        this.addElement(Element.CARBON, "Koolstof");
+        this.addElement(Element.NITROGEN, "Stikstof");
+        this.addElement(Element.OXYGEN, "Zuurstof");
+        this.addElement(Element.FLUORINE, "Fluor");
+        this.addElement(Element.NEON, "Neon");
+        this.addElement(Element.SODIUM, "Natrium");
+
+        //ISOTOPES
+        this.add(Hydrogen.ISO1.getTranslationKey(), "Protium");
+        this.add(Hydrogen.ISO2.getTranslationKey(), "Deuterium");
+        this.add(Hydrogen.ISO3.getTranslationKey(), "Tritium");
+        this.add(Helium.ISO2.getTranslationKey(), "Diproton");
+        this.add(Lithium.ISO3.getTranslationKey(), "Triproton");
+
         // ERRORS
         this.add("error.leaf.not_enough", "Je hebt 8 bladeren nodig om een hoopje te maken");
     }
 
     private void addItemGroup(ItemGroup group, String translation) {
         this.add("itemGroup." + group.getPath(), translation);
+    }
+
+    private void addElement(Element element, String translation) {
+        this.add(((TranslationTextComponent) element.getTranslation()).getKey(), translation);
     }
 }
