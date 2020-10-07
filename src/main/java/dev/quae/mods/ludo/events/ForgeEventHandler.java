@@ -46,6 +46,9 @@ public final class ForgeEventHandler {
         if (state.getBlock() != Blocks.STONE) {
             return;
         }
+        if(event.getPlayer().isCreative()){
+            return;
+        }
         event.setUseBlock(Result.DENY);
         event.setUseItem(Result.DENY);
         event.setCanceled(true);
