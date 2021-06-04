@@ -44,7 +44,7 @@ public class LeavesPileBlock extends BedBlock {
         for (final Direction direction : Plane.HORIZONTAL) {
             final BlockPos neighbourPos = pos.offset(direction);
             final BlockState neighbourState = world.getBlockState(neighbourPos);
-            if (neighbourState.isIn(this) && !neighbourState.get(ATTACHED)) {
+            if (neighbourState.matchesBlock(this) && !neighbourState.get(ATTACHED)) {
                 return this.getDefaultState().with(FACING, direction).with(ATTACHED, true);
             }
         }

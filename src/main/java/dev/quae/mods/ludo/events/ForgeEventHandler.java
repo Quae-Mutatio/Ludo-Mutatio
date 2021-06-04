@@ -142,7 +142,7 @@ public final class ForgeEventHandler {
         }
         player.getBedPosition().ifPresent(bedPos -> {
             final BlockState state = world.getBlockState(bedPos);
-            if (state.isIn(Ludo.Blocks.LEAVES_PILE)) {
+            if (state.matchesBlock(Ludo.Blocks.LEAVES_PILE)) {
                 world.destroyBlock(bedPos, false);
             }
         });

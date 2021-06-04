@@ -5,7 +5,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '3.+', changing: true
+        classpath group: 'net.minecraftforge.gradle', name: 'ForgeGradle', version: '4.1.+', changing: true
     }
 }
 apply plugin: 'net.minecraftforge.gradle'
@@ -24,13 +24,17 @@ sourceSets{
 
 repositories {
     maven {
-        name = "Progwml6 maven" // JEI
+        name = "Progwml6" //JEI
         url = "https://dvs1.progwml6.com/files/maven/"
     }
-    /*maven {
-        name = "ModMaven"
-        url = "https://modmaven.k-4u.nl"
-    }*/
+    maven {
+        name = "BlameJared" // WAWLA
+        url 'https://maven.blamejared.com'
+    }
+    maven {
+        name = "TehNut" // HWYLA
+        url 'https://maven.tehnut.info'
+    }
 }
 
 dependencies {
@@ -38,6 +42,11 @@ dependencies {
 
     compileOnly fg.deobf("mezz.jei:jei-${property('mc.version')}:${property('jei.version')}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${property('mc.version')}:${property('jei.version')}")
+
+    compileOnly fg.deobf("mcp.mobius.waila:Hwyla:${property('hwyla.version')}:api")
+    runtimeOnly fg.deobf("mcp.mobius.waila:Hwyla:${property('hwyla.version')}")
+
+    implementation fg.deobf("net.darkhax.wawla:WAWLA-${property('mc.version')}:${property('wawla.version')}")
 
     implementation 'com.intellij:annotations:+@jar'
 }

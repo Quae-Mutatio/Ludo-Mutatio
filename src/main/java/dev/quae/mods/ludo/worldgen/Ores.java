@@ -12,10 +12,10 @@ import net.minecraft.world.gen.feature.OreFeatureConfig.FillerBlockType;
 // TODO: Create accurate ore features then add them to accurate biomes in WorldGenEventHandler#onBiomeLoading(BiomeLoadingEvent).
 public class Ores {
     public static final ConfiguredFeature<?, ?> ACANTHITE_ORE = register("acanthite_ore", Feature.ORE.withConfiguration(
-            new OreFeatureConfig(FillerBlockType.field_241882_a, Blocks.ACANTHITE_ORE.getDefaultState(), 9)) // 9 = Vein Size
-            .func_242733_d(64) // Range = 0 - 64 on Y and other axis are min-max
-            .func_242728_a() // Square Placement
-            .func_242731_b(20) // Instances per chunk? and 32_b adds a second param for adding variance
+            new OreFeatureConfig(FillerBlockType.BASE_STONE_OVERWORLD, Blocks.ACANTHITE_ORE.getDefaultState(), 9)) // 9 = Vein Size
+            .range(64) // Range = 0 - 64 on Y and other axis are min-max
+            .square() // Square Placement
+            .count(20) // Instances per chunk? and 32_b adds a second param for adding variance
     );
 
     private static ConfiguredFeature<?, ?> register(final String name, final ConfiguredFeature<?, ?> feature) {
